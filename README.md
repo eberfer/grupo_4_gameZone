@@ -32,7 +32,7 @@ Por estética, similitud en la oferta de servicios y clientes que apuntan.
 3.  www.iguanafix.com.ar
 4.  www.freelancer.com
 
-Por las funcionalidades implementadas
+Por las funcionalidades implementadas.
 5.  www.mercadolibre.com.ar
 6.  www.uber.com
 7.  www.pedidosya.com.ar
