@@ -1,4 +1,4 @@
-# grupo_4_Servilink
+# grupo_4_ServiLink
 Proyecto integrador para Digital House
 
 Servilink es un Market Place que ofrece contrataciones de servicios para el hogar en pocos clics, encontrando profesionales cerca de ti que puedan atender a tu necesidad de acuerdo a tu disponibilidad y garantizando los estándares de calidad en cada uno de los servicios. 
