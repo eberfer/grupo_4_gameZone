@@ -9,10 +9,26 @@ function readHTML (fileName) {
 }
 
 const controller = {
-	root: (req, res) => {
-		let html = readHTML('index');
+	home: (req, res) => {
+		let html = readHTML('home');
 		res.send(html);
 	},
+	userRegister: (req, res) => {
+		let html = readHTML('userRegister');
+		res.send(html);
+	},
+	newProduct: (req, res) => {
+		let html = readHTML('newProduct');
+		res.send(html);
+	},
+	productDetail: (req, res) => {
+		let html = readHTML('productDetail');
+		res.send(html);
+	},
+	productCart: (req, res) => {
+		let html = readHTML('productCart');
+		res.send(html);
+	}
 };
 
 module.exports = controller

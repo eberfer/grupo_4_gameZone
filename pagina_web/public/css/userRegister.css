@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: wheat;
+}
+
+.cabeceDePagina {
+    border: solid 1px rgb(173, 94, 94);
+    background-color: teal;
+    overflow: hidden;
+}
+
+.logo img {
+    size: 200px;
+    border: solid 1px green;
+    float: left;
+}
+
+.nav-bar-right {
+    background-color: honeydew;
+}
+
+li {
+    float: right;
+    border: solid 1px yellow;
+    margin: 10px;
+    text-decoration: none;
+}
