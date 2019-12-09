@@ -1,30 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans|Roboto&display=swap');
 * {
     box-sizing: border-box;
 }
 
+body {
+    background-color: #FFDA82;
+    font-family: "Roboto", "Noto Sans", sans-serif;
+    color: #FFFAEE;
+}
+
 .container {
-    background-color: wheat;
+    width: 1140px;
+    background-color: #375DB3;
+    margin: auto;
+    border-radius: 1rem;
 }
-
-.cabeceDePagina {
-    border: solid 1px rgb(173, 94, 94);
-    background-color: teal;
+.cabeceraDePagina {
     overflow: hidden;
+    padding: 10px;
 }
 
-.logo img {
-    size: 200px;
-    border: solid 1px green;
+div img {
+    width: auto;
+    height: 100px;
     float: left;
+    margin: 5px;
 }
 
-.nav-bar-right {
-    background-color: honeydew;
+.right-navbar {
+    float: right;
+    border: solid 5px rgba(136, 152, 243, 0.39);
+    margin: 25px;
+
+}
+li a {
+    text-decoration: none;
+    display: inline-block;
+
+}
+
+ul li a {
+    color: white
+}
+
+ul {
+    margin: auto;
 }
 
 li {
     float: right;
-    border: solid 1px yellow;
-    margin: 10px;
-    text-decoration: none;
+    margin: 15px;
+    list-style: none;
 }

@@ -1,4 +1,41 @@
-html, body {
-  min-height: 100vh;
-  margin: 0;
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+
+body {
+  font-family: "Roboto Slab", sans-serif;
+  background-image: url(../images/chebkground.png);
+  margin-top: 0px;
+}
+
+div.top-navbar {
+  background-color: #577399;
+  color: #f7f7ff;
+  border: solid 1px #bdd5ea;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 3px;
+}
+
+
+.col-sm-3 {
+  display: flex;
+ justify-content: center;
+ margin: auto;
+}
+
+.col-sm-12 {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.col-md-8 {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; 
+}
+
+.col-lg-6 {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; 
 }
