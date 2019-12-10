@@ -25,9 +25,9 @@ p {
 .main-header{
   background-color: #0D77FF;
   padding:15px 0;
-  
- 
 }
+
+
 /*Para hacer un debug*/
 [class*=col-]{
   border: solid 1px brown;
@@ -93,21 +93,37 @@ h3 {
  padding: 0 10px;
 }
 .redes { 
+  display: block;
   background-color: #0D77FF;
   padding:5px 5px;
   margin-top:10px;
   width: 100%;
   font-size: 18px;
-}
-.redes p{
-  display: inline-block;
-  color: white;
+  text-align: center;
 }
 .categorias {
   display: block;
   text-align: center;
   margin: 10px;
+  justify-content: space-around;
+  align-items: center;
 }
+.categorias p{
+  padding: 10px;
+}
+.nombre-servicio {
+  padding: 5px;
+}
+.redes p{
+  display: inline-block;
+  color: white;
+}
+.main-footer {
+  display:block;
+  width: 100%;
+ 
+}
+ 
 @media (min-width: 768px){
   .coutas{
     text-align: right;
@@ -116,7 +132,18 @@ h3 {
     display: none;
   }
   .menu {
-    display: flex;
-    flex-wrap: wrap;
+    display: block;
+    
     }
+  .menu li {
+    float: left;
+    font-size: 12px;
+  }
+  .menu a {
+    display: inline-block;
+    margin: 10px;
+    
+}
+@media (min-width: 1024px){
+  
 }

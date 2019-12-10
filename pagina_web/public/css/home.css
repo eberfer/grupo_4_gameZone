@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 
-body {
-  font-family: "Roboto Slab", sans-serif;
-  background-image: url(../images/chebkground.png);
-  margin-top: 0px;
+* {
+  box-sizing: border-box;
 }
 
+body {
+  font-family: "Roboto Slab", sans-serif;
+  background-image: url(../images/white-waves.png);
+  margin-top: 0px;
+}
+/* Barra de navegacion superior*/
 div.top-navbar {
-  background-color: #577399;
+  background-color: #0D77FF;
   color: #f7f7ff;
   border: solid 1px #bdd5ea;
   border-bottom-left-radius: 5px;
@@ -15,6 +19,13 @@ div.top-navbar {
   padding: 3px;
 }
 
+.deploy-menu {
+  justify-content: flex-end;
+}
+
+li {
+  list-style: none;
+}
 
 .col-sm-3 {
   display: flex;
@@ -26,6 +37,7 @@ div.top-navbar {
   display: flex;
   justify-content: center;
   margin-top: 10px;
+  text-align: center;
 }
 
 .col-md-8 {
@@ -38,4 +50,110 @@ div.top-navbar {
   display: flex;
   justify-content: center;
   margin-top: 10px; 
+}
+
+/*MID SECTION TEXT & IMAGE*/
+.mideSection {
+  border: solid blue 1px;
+}
+
+.col-12 h3 {
+  color: #0e72cf;
+}
+
+.main-box {
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/livingroom.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: #2d2d2a;
+}
+
+.main-text {
+  display: flex;
+  align-items: center;
+  color: #f7f7ff;
+  position: relative;
+  background-color: rgb(0, 0, 0, 0.5);
+  padding: 5px;
+}
+
+.text {
+
+}
+
+.text2 {
+  border-radius: 10px;
+ text-align: center;
+}
+
+.row {
+  margin: 10px;
+}
+/* BUSCADOR */
+
+.buscador {
+  display: flex;
+  justify-content: center;
+}
+
+/*MID SERVICE LIST*/
+
+.service-list {
+  border: solid green 1px ;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0% 10%;
+}
+
+.service-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.service-box .col-5 {
+  background-color: #0D77FF;
+  color:  #f7f7ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 4px lightsteelblue;
+  border-radius: 20px;
+  height: 80px;
+  padding: 10px;
+  margin: 2px;
+  text-align: center;
+}
+
+
+p {
+  
+}
+
+.Main-footer {
+  color: #f7f7ff;
+  background-color: #0D77FF;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+}
+
+a {
+  color: #f7f7ff;
+}
+
+
+
+@media (min-width: 1990px) {
+ .service-list {
+   background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
 }

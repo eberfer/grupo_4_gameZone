@@ -6,8 +6,8 @@
 	<title>Servilink - Home</title>
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/home.css">
-	<script src="/Js/bootstrap.min.js"></script>
-	<script src="/Js/jquery.js"></script>
+	<script src="https://kit.fontawesome.com/99e23af5b0.js" crossorigin="anonymous"></script>
+	
 	<style>
 		img {
 			max-width: 100%;
@@ -17,25 +17,29 @@
 <body>
 	
 	<!-- Main Header -->
-	<div class="container-sm"> 
+	<div class="container-fluid"> 
 		<!-- Top Navigation Bar -->
 		<div class="top-navbar">
 			<nav class="row">
-				<div class="col-sm-3">
-					<a>Home</a>				
+				<div class="col-4">
+					Logo
+				</div>
+				<div class="deploy-menu" class="col-4" >
+					<a href="#seccion" class="btn btn-primary" data-toggle="collapse"><i class="fas fa-bars"></i></a>
+					<div class="collapse" id="seccion">
+						<br>
+						<div class="well">
+							<ul>
+								<li><a href="https://google.com"></a>Home</li>
+								<li><a href="#"></a>Servicios</li>
+								<li><a href="#"></a>Login</li>
+								<li><a href="#"></a>Sign In</li>
+							</ul>
+						</div>
+						
+					</div>
 				</div>
 				
-				<div class="col-sm-3">
-					<a>Servicios</a>				
-				</div>
-				
-				<div class="col-sm-3">
-					<a>Login</a>				
-				</div>
-				
-				<div class="col-sm-3">
-					<a>Sign In</a>				
-				</div>
 			</nav>
 			
 			
@@ -43,59 +47,110 @@
 	</div>
 	
 	<!-- Mid Section -->
+	<div class="w-100"><br></div>
 	
-	<div class="midSection">
-		<div class="container">
+	<div class="container">
+		<div class="main-box">
 			<div class="row">
-				<div class="w-100"><br></div>
-				<div class="w-100"><br></div>
 				
-				<div class="col-sm-12">
-					Logo
+				<div class="main-text" class="col-12">
+					Servilink - Soluciones en un Click!
 				</div>
-				
-				<div class="w-100"><br></div>
-				
-				<div class="col-sm-12">
-					Soluciones en un Click!	
+			</div>
+		</div>
+		
+		<div class="w-100"><br></div>
+		
+		<!-- Distribucion de textos -->
+		<div class="container">
+			<div class="text2" class="row">
+				<div class="col-12">
+					<h3> ¡Encontrá la ayuda que necesitas con personal altamente calificado! </h3>
 				</div>
-				
-				<div class="Main-image">
-					<img src="/images/midbackground.jpg" alt="Main image">
-				</div>
 				<div class="w-100"><br></div>
-				<div class="w-100"><br></div>
-				
-				<div class="col-sm-12 col-md-8 col-lg-6">
-					<div class="input-group mb-3">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="basic-addon1">
-								Search:
-							</span>
-						</div>
-						<input type="text" class="form-control" placeholder=". . ." aria-label="Username" aria-describedby="basic-addon1">
-					</div>	
+				<div class="col-12">
+					<p>En <strong>ServiLink</strong> contamos con alidos certificados para garantizar la calidad en cada servicio.</p>
+					<p>¡Es muy fácil! Seleccioná un servicio, dinos tu disponibilidad y agendamos una visita.</p>		
+					
 				</div>
-			</div> 
+			</div>
 			
-			
-			
+		</div>
+	</div>	
+	
+	
+	<div class="w-100"><br></div>
+	
+	<!-- Search Bar -->
+	<div class="container">
+		<div class="buscador" class="row">
+			<div class="col-12 col-sm-10 col-md-8 col-lg-7" class="search-bar">
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="basic-addon1">
+							Search:
+						</span>
+					</div>
+					<input type="text" class="form-control" placeholder=". . ." aria-label="Username" aria-describedby="basic-addon1">
+				</div>	
+			</div>
 		</div>
 	</div>
 	
 	
+	<div class="w-100"><br></div>
+	
+	
+	
+	<!-- Columna con servicios -->
+	
+	<div >
+		<nav class="service-list" class="container">
+			<div class="service-box" class="row">
+				<div class="col-5 col-sm-3 col-lg-2">
+					<i class="fas fa-burn"><br>Gas Natural</i>
+				</div>
+				<div class="col-5 col-sm-3 col-lg-2">
+					<i class="fas fa-plug"><br>Electricista</i>
+				</div>
+				<div class="col-5 col-sm-3 col-lg-2">
+					<i class="fas fa-hammer"><br>Carpintero</i>
+				</div>
+				<div class="col-5 col-sm-3 col-lg-2">
+					<i class="fas fa-truck"><br>Mudanza</i>
+				</div>
+				<div class="col-5 col-sm-3 col-lg-2">
+					<i class="fas fa-skull-crossbones"><br>Control de Plagas</i>
+				</div>
+				<div class="col-5 col-sm-3 col-lg-2">
+					<i class="far fa-snowflake"><br>Refrigeracion</i>
+				</div>
+			</div>
+		</nav>
+		
+	</div>
+	
+	<div class="w-100"><br></div>
+	
+	
+	<!-- Footer -->
 	
 	<div class="container">
-		<div class="Main-footer">
-			<ul>
-				<li>Seguinos en nuestras redes: <br> </li>
+		<div class="Main-footer" class="row">
+			<div class="col-12">
+				<ul>
+				<li>Seguinos en nuestras redes:   <i class="fab fa-facebook-square"></i> <i class="fab fa-instagram"></i> <i class="fab fa-twitter-square"></i><br> </li>
 				<li><a href="#">FAQ</a></li>
 				<li><a href="#">Contacto</a></li>
 			</ul>
+			</div>
+			
 		</div>
 		
 	</div>
 	
 	
+	<script src="../Js/jquery.js"></script>
+	<script src="../Js/bootstrap.min.js"></script>
 </body>
 </html>
