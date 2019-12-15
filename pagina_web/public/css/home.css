@@ -1,6 +1,74 @@
+/*fonts*/
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap rel=stylesheet");
 
-.row {
-  background-color: burlywood;
+
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'PT Sans', sans-serif;
+  background-color: white;
+  
+}
+
+.container, .row {
+  height: 100px;
+
+}
+
+
+
+ol, ul {
+  margin:0;
+  padding:0;
+  list-style: none;
+
+}
+
+
+.colum-menu{
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: flex-end;
+}
+
+.main-header {
+  height: 100px;
+  background-color: rgba(8, 14, 51);
+}
+
+.logo{
+  margin-top:35px;
+  display: flex;
+}
+
+.img1 {
+  width: 100%;
+
+}
+
+.boton, .nav-boton{
+background-color:  rgba(8, 14, 51);
+
+
+}
+
+.links{
+  color: rgb(32, 57, 204);
+  padding-left: 15px;
+}
+
+[class*=col-]{
+  border: solid 1px brown;
+}
+
+
+
+
+@media (min-width: 768px){
+
 }
 
 .col-3 {
