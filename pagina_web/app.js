@@ -16,6 +16,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // ************ Template Engine - (don't touch) ************
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 

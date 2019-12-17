@@ -2,32 +2,32 @@ const fs = require('fs');
 const path = require('path');
 
 // ************ Function to Read an EJS File ************
-function readHtml (fileName) {
-	let filePath = path.join(__dirname, `/../views/${fileName}.html`);
-	let htmlFile = fs.readFileSync(filePath, 'utf-8');
-	return htmlFile;
+function readEjs (fileName) {
+	let filePath = path.join(__dirname, `/../views/${fileName}.ejs`);
+	let ejsFile = fs.readFileSync(filePath, 'utf-8');
+	return ejsFile;
 }
 
 const controller = {
 	home: (req, res) => {
-		let html = readHtml('home');
-		res.send(html);
+		let ejs = readEjs('home');
+		res.send(ejs);
 	},
 	userRegister: (req, res) => {
-		let html = readHtml('userRegister');
-		res.send(html);
+		let ejs = readEjs('userRegister');
+		res.send(ejs);
 	},
 	newProduct: (req, res) => {
-		let html = readHtml('newProduct');
-		res.send(html);
+		let ejs = readEjs('newProduct');
+		res.send(ejs);
 	},
 	productDetail: (req, res) => {
-		let html = readHtml('productDetail');
-		res.send(html);
+		let ejs = readEjs('productDetail');
+		res.send(ejs);
 	},
 	productCart: (req, res) => {
-		let html = readHtml('productCart');
-		res.send(html);
+		let ejs = readEjs('productCart');
+		res.send(ejs);
 	}
 };
 
