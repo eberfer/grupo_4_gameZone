@@ -1,24 +1,27 @@
 /*fonts*/
 @import url("https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap rel=stylesheet");
 
-
-
 * {
   box-sizing: border-box;
 }
 
-body{
+html body{
   font-family: 'PT Sans', sans-serif;
   background-color: white;
+  height: 100hv;
+  /*background-image: url("/images/Background-League-Of-Legends.jpg");*/
+  background-repeat: no-repeat;
+}
+
+/*estilo header - inicio*/
+.main-header .container,.main-header .row {
+  height: 100px;
   
 }
 
-.container, .row {
-  height: 100px;
-
+p{
+  margin:0;
 }
-
-
 
 ol, ul {
   margin:0;
@@ -46,11 +49,13 @@ ol, ul {
 
 .img1 {
   width: 100%;
+  
 
 }
 
 .boton, .nav-boton{
 background-color:  rgba(8, 14, 51);
+z-index: 10;
 
 
 }
@@ -61,42 +66,65 @@ background-color:  rgba(8, 14, 51);
 }
 
 [class*=col-]{
-  border: solid 1px brown;
+  border: solid 1px rgb(161, 160, 160);
 }
 
 
+.dropdown-menu{
+  z-index: 10;
+}
+/*estilo header - fin*/
 
+/*estilo main - inicio*/
 
-@media (min-width: 768px){
+h3, h4 {
+  margin-top: 28px;
+}
+.contenedor-img{
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin: 0;
+}
+
+.nombreJuego, .precioJuego {
+  display: block;
+}
+
+.productosHome{
+ display: flex;
+ border: solid 1px rgb(161, 160, 160);
+ color: #000;
 
 }
 
-.col-3 {
-  border: 1px dashed black;
-  text-align: center;
+.col-productos{
+  margin: 5px 0;
 }
 
-.main-section {
-  background-color: chocolate;
+/*estilo main - fin*/
+
+/*estilo footer - inicio*/
+footer{
+  margin: 5px 0;
+  background-color: rgba(8, 14, 51);
 }
 
-.aside {
-  background-color: cornflowerblue;
+.logo-footer{
+  width: 80px;
 }
 
-.gameCol {
-  border: solid 1px blue;
-  text-align: center;
-  padding: 2px;
+.redes-sociales{
+  display: block;
+  text-align: end;
+  margin-top:33px;
 }
 
-.aside {
-  justify-content: space-around;
+footer  i{
+  color: beige;
+  margin: 0 2px;
+  text-align: right;
+  
 }
 
-.news {
-  justify-content: center;
-  padding: 5px;
-  text-align: center;
-  background-color: coral;
-}
+/*estilo footer - fin*/
