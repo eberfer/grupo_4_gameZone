@@ -1,12 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Adding New Product</title>
-	
-</head>
-<body>
-	<h1>New Product Page</h1>
-</body>
-</html>
+<%- include('partials/head')%>
+<%- include('partials/loggedHeader')%>
+
+<div class="container">
+	<div class="row justify-content-center mt-3">
+		<div class="col-10 col-md-8 col-lg-6">
+			
+			<h3>New game</h3>
+
+			<!-- Game Name -->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="gameName">Game:</span>
+				</div>
+				<input type="text" class="form-control" placeholder="..." aria-label="..." aria-describedby="gameName">
+			</div>
+			
+			<!-- Price -->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Price -$</span>
+				</div>
+				<input type="number" min="1" class="form-control" aria-label="Amount (to the nearest dollar)">
+			</div>
+			
+			
+			
+			<!-- Platform -->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<label class="input-group-text" for="Platform">Platform</label>
+				</div>
+				<select class="custom-select" id="Platform">
+					<option selected>PS4</option>
+					<option value="1">XBOX</option>
+					<option value="2">PC</option>					
+				</select>
+			</div>
+			
+			<!-- Image ADD -->
+			<div class="input-group mb-3">
+				<div class="custom-file">
+				  <input type="file" class="custom-file-input" id="inputGroupFile02">
+				  <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+				</div>
+				<div class="input-group-append">
+				  <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
+				</div>
+			  </div>
+			
+			<!-- Game Category -->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<label class="input-group-text" for="Category">Game-Type</label>
+				</div>
+				<select class="custom-select" id="Category">
+					<option selected>Action</option>
+					<option value="1">Sports</option>
+					<option value="2">Roleplay</option>
+					<option value="3">MOBA</option>
+					<option value="4">FPS</option>
+					<option value="5">Strategy</option>
+				</select>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<%- include('partials/footer')%>

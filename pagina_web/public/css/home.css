@@ -1,102 +1,123 @@
-/*fonts*/
 @import url("https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap rel=stylesheet");
 
-
+/* Paleta de Colores de pagina
+#2039CC
+#192DA1
+#111E6C
+#0C154A
+#080E33
+*/
 
 * {
-  box-sizing: border-box;
+   box-sizing: border-box;
 }
 
-body{
-  font-family: 'PT Sans', sans-serif;
-  background-color: white;
-  
+body {
+    background-image: url(/images/blackmamba.png);
+    color: lightgray;
+    font-family: 'PT Sans', sans-serif;
 }
+/* barra superior de navegacion*/
 
-.container, .row {
-  height: 100px;
-
-}
-
-
-
-ol, ul {
-  margin:0;
-  padding:0;
-  list-style: none;
-
-}
-
-
-.colum-menu{
- display: flex;
- flex-wrap: wrap;
- justify-content: flex-end;
+.container-fluid .row {
+    background-color: rgba(7, 9, 31, 0.719);
 }
 
 .main-header {
-  height: 100px;
-  background-color: rgba(8, 14, 51);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+/* boton desplegable de navegacion */
+.right-navbar {
+    background-color: transparent;
+    font-size: 19px;
+    text-align: center;
+    color: lightgray
 }
 
-.logo{
-  margin-top:35px;
-  display: flex;
+ul li {
+    list-style: none;
+}
+a {
+    color: lightgray;
 }
 
-.img1 {
-  width: 100%;
+a:hover {
+    color: lightskyblue;
+}
+.menu-clasico {
+    
+}
+
+ul .nav {
+    text-align: center;
+}
+/* css para menu de navegacion desplegable en VP Xsmall hasta Small */
+
+.colapse-nav {
+    display: flex;
+   flex-direction: row-reverse; 
+}
+
+.card-body {
+    display: flex;
+    flex-direction: row-reverse;
 
 }
 
-.boton, .nav-boton{
-background-color:  rgba(8, 14, 51);
-
-
+/* css para menu de navegacion clasico en VP Medium en adelante */
+.nav-link {
+    padding: 5px 10px;
 }
 
-.links{
-  color: rgb(32, 57, 204);
-  padding-left: 15px;
+.nav {
+    padding-left: 46px;
 }
 
-[class*=col-]{
-  border: solid 1px brown;
+.news-section .col-12 {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(7, 9, 31, 0.719);
+    margin: 2px;
+    padding: 6px;
+    text-align: center;
 }
 
+/* Carrousel images */
 
-
-
-@media (min-width: 768px){
-
+.car-box img {
+    border-radius: 10px;
 }
 
-.col-3 {
-  border: 1px dashed black;
-  text-align: center;
+/* Carrousel-Text section */
+
+.Car-fondo {
+    display: block;
+    text-align: center;
+    background-color: rgba(36, 37, 48, 0.39);
+    border-radius: 10px;
+    padding: 5px;
 }
 
-.main-section {
-  background-color: chocolate;
-}
+/* Noticias Section */
 
-.aside {
-  background-color: cornflowerblue;
-}
 
-.gameCol {
-  border: solid 1px blue;
-  text-align: center;
-  padding: 2px;
-}
 
-.aside {
-  justify-content: space-around;
+@media (min-width: 1024px){
+    .nav {
+        padding-left: 35%;
+    }
 }
-
-.news {
-  justify-content: center;
-  padding: 5px;
-  text-align: center;
-  background-color: coral;
+@media (min-width: 1440px) {
+    .nav {
+        padding-left: 45%;
+    }
+    .nav-link {
+        padding-left: 19px;
+    }
+    /* img {
+        image-resolution: 30%;
+    } */
 }

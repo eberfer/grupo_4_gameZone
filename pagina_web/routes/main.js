@@ -1,6 +1,9 @@
 // ************ Require's ************
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+const path = require('path');
+
 
 // ************ Controller Require ************
 const mainController = require('../controllers/mainController');
@@ -15,5 +18,9 @@ router.get('/newProduct', mainController.newProduct);
 router.get('/productCart', mainController.productCart);
 /* GET - product detail. */
 router.get('/productDetail', mainController.productDetail);
+/* Get - user login. */
+router.get('/userLogin', mainController.userLogin);
+/* Get - new product. */
+router.get('/newProduct', mainController.newProduct);
 
 module.exports = router;
