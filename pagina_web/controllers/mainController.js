@@ -1,15 +1,15 @@
 const fs = require('fs');
 const path = require('path');
+const bcrypt = require('bcrypt');
+
+
 
 // ************ Controller to read EJS file ************
 
 const controller = {
 	home: (req, res) => {
 		res.render("home");
-	},
-	userRegister: (req, res) => {
-		res.render("userRegister");
-	},
+	},	
 	newProduct: (req, res) => {
 		res.render("newProduct");
 	},
