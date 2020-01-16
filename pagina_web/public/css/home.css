@@ -101,6 +101,18 @@ ul .nav {
     padding: 5px;
 }
 
+/* Product Detail CSS */
+
+.mainImg {
+    background-color: antiquewhite;
+    margin-bottom: 20px;
+}
+
+.imgSlide {
+    background-color: aquamarine;
+    margin-bottom: 20px;
+}
+
 /* Noticias Section */
 
 
