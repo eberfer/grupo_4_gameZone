@@ -7,8 +7,10 @@ const bcrypt = require('bcrypt');
 // ************ Controller to read EJS file ************
 
 const controller = {
+	
 	home: (req, res) => {
 		res.render("home");
+<<<<<<< HEAD
 	},	
 	newProduct: (req, res) => {
 		res.render("newProduct");
@@ -24,7 +26,10 @@ const controller = {
 	},
 	newProduct: (req, res) => {
 		res.render("newProduct")
+=======
+>>>>>>> tmp
 	}
+	
 };
 
 module.exports = controller

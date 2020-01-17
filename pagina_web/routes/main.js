@@ -19,9 +19,12 @@ const upload = multer({ storage: storageDisk });
 
 // ************ Controller Require ************
 const mainController = require('../controllers/mainController');
+const productController = require('../controllers/productController');
+const usersController = require('../controllers/usersController');
 
 /* GET - home page. */
 router.get('/', mainController.home);
+<<<<<<< HEAD
 
 /* envio y procesamiento de formulario de registro de usuario */
 router.get('/userRegister', mainController.userRegister);
@@ -48,5 +51,21 @@ router.get('/userLogin', mainController.userLogin);
 router.post('/Userlogin', mainController.processLogin);
 
 router.get('/profile/:id', mainController.profile);
+=======
+/* GET - user register page. */
+router.get('/userRegister', usersController.userRegister);
+/* GET - add new product. */
+router.get('/newProduct', productController.newProduct);
+/* GET - product cart. */
+router.get("/products", productController.products)
+/* GET - product cart. */
+router.get('/productCart', productController.productCart);
+/* GET - product detail. */
+router.get('/productDetail', productController.productDetail);
+/* Get - user login. */
+router.get('/userLogin', usersController.userLogin);
+/* Get - new product. */
+router.get('/newProduct', productController.newProduct);
+>>>>>>> tmp
 
 module.exports = router;

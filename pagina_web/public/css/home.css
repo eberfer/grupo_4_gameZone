@@ -105,14 +105,27 @@ ul .nav {
 /* Product Detail CSS */
 
 .mainImg {
-    background-color: antiquewhite;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 .imgSlide {
-    background-color: aquamarine;
+    justify-content: center;
     margin-bottom: 20px;
 }
+
+/* Products Section */
+
+.gameCubes {
+
+}
+
+.cubes {
+    background-color: sandybrown;
+    margin: 5px;
+}
+
+
 
 /* Noticias Section */
 
