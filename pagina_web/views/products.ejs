@@ -83,57 +83,19 @@
         <!-- Listado de Juegos -->
         <div class="col-8">
             <div class="row gameCubes">
-                
-                <div class="col-5 col-md-3 cubes">
-                    <img class="img-fluid" src="/images/gamesImages/madden.jpg" alt="GameImg">
-                    <h6>game1</h6>
-                    <p>Game Description</p>
+
+                <% products.forEach(product => { %>
+                    <div class="col-5 col-md-3 cubes">
+                        <h2> <%= product.id %> </h2>
+                        <b> <%= product.Nombre %> </b><br>
+                        <b> <%= product.creador %> </b>
+                        <form action="/products/borrar/<%= product.id %>?_method=DELETE" method="POST">
+                            <button type="submit">BORRAR</button>
+                        </form>
+                    <% }) %>
+                    
                 </div>
                 
-                <div class="col-5 col-md-3 cubes">
-                    <div class="row">
-                        <div class="col">
-                            
-                        </div>
-                    </div>
-                    <a href="#"><h5>game2</h5></a>
-                </div>
-                
-                <div class="col-5 col-md-3 cubes">
-                    <div class="row">
-                        <div class="col">
-                            
-                        </div>
-                    </div>
-                    <a href="#"><h5>game3</h5></a>
-                </div>
-                
-                <div class="col-5 col-md-3 cubes">
-                    <div class="row">
-                        <div class="col">
-                            
-                        </div>
-                    </div>
-                    <a href="#"><h5>game4</h5></a>
-                </div>
-                
-                <div class="col-5 col-md-3 cubes">
-                    <div class="row">
-                        <div class="col">
-                            
-                        </div>
-                    </div>
-                    <a href="#"><h5>game5</h5></a>
-                </div>
-                
-                <div class="col-5 col-md-3 cubes">
-                    <div class="row">
-                        <div class="col">
-                            
-                        </div>
-                    </div>
-                    <a href="#"><h5>game5</h5></a>
-                </div>
             </div>    
             
         </div>

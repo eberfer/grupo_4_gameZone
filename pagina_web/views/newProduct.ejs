@@ -9,61 +9,45 @@
 			
 			<h3>New game</h3>
 
-			<!-- Game Name -->
-			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-					<span class="input-group-text" id="gameName">Game:</span>
+			<form action="/products/newProduct" method="POST">
+			 	<!-- Game Name -->
+				<div class="form-group">
+					<label for="Nombre">Nombre</label>
+					<input type="text" class="form-control" placeholder="..." name="Nombre" id="Nombre">
 				</div>
-				<input type="text" class="form-control" placeholder="..." aria-label="..." aria-describedby="gameName">
-			</div>
-			
-			<!-- Price -->
-			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-					<span class="input-group-text">Price -$</span>
+				
+				<!-- Descripcion del juego -->
+				<div class="form-group">
+					<label for="Descripcion">Descripcion</label>
+					<input type="text" class="form-control" placeholder="..." name="Descripcion" id="Descripcion">
 				</div>
-				<input type="number" min="1" class="form-control" aria-label="Amount (to the nearest dollar)">
-			</div>
-			
-			
-			
-			<!-- Platform -->
-			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-					<label class="input-group-text" for="Platform">Platform</label>
+				
+				<!-- Price -->
+				<div class="form-group">
+					<label for="Precio">Precio</label>
+					<input type="number" class="form-control" placeholder="..." name="Precio" id="Precio">	
+				</div>				
+				
+				<!-- Platform -->
+				<div class="form-group">
+					<label for="Plataforma">Plataforma</label>
+					<input type="text" class="form-control" placeholder="..." name="Plataforma" id="Plataforma">	
 				</div>
-				<select class="custom-select" id="Platform">
-					<option selected>PS4</option>
-					<option value="1">XBOX</option>
-					<option value="2">PC</option>					
-				</select>
-			</div>
-			
-			<!-- Image ADD -->
-			<div class="input-group mb-3">
-				<div class="custom-file">
-				  <input type="file" class="custom-file-input" id="inputGroupFile02">
-				  <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+				
+				<!-- Image ADD -->
+				<div class="form-group">
+					<label for="gameImg">gameImg</label>
+					<input type="text" class="form-control" placeholder="..." name="gameImg" id="gameImg">	
 				</div>
-				<div class="input-group-append">
-				  <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
+				
+				<!-- Game Category -->
+				<div class="form-group">
+					<label for="Categoria">Categoria</label>
+					<input type="text" class="form-control" placeholder="..." name="Categoria" id="Categoria">
 				</div>
-			  </div>
-			
-			<!-- Game Category -->
-			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-					<label class="input-group-text" for="Category">Game-Type</label>
-				</div>
-				<select class="custom-select" id="Category">
-					<option selected>Action</option>
-					<option value="1">Sports</option>
-					<option value="2">Roleplay</option>
-					<option value="3">MOBA</option>
-					<option value="4">FPS</option>
-					<option value="5">Strategy</option>
-				</select>
-			</div>
+				
+				<button type="submit">Guardar</button>
+			</form>
 			
 		</div>
 	</div>

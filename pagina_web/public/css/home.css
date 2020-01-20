@@ -1,12 +1,16 @@
-@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap rel=stylesheet");
+@import url('https://fonts.googleapis.com/css?family=Rajdhani&display=swap');
 
-/* Paleta de Colores de pagina
-#2039CC
-#192DA1
-#111E6C
-#0C154A
-#080E33
-*/
+
+/* Paleta de Colores de pagina */
+
+.colors {
+    color: lightgray;
+    background-color: #2039CC;
+    background-color: #192DA1;
+    background-color: #111E6C;
+    background-color: #0C154A;
+    background-color: #080E33
+}
 
 * {
    box-sizing: border-box;
@@ -15,7 +19,7 @@
 body {
     background-image: url(/images/blackmamba.png);
     color: lightgray;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Rajdhani', sans-serif;
 }
 /* barra superior de navegacion*/
 
@@ -47,15 +51,11 @@ a {
 a:hover {
     color: lightskyblue;
 }
-.menu-clasico {
-    
-}
 
 ul .nav {
     text-align: center;
 }
 /* css para menu de navegacion desplegable en VP Xsmall hasta Small */
-
 .colapse-nav {
     display: flex;
    flex-direction: row-reverse; 
@@ -121,14 +121,43 @@ ul .nav {
 }
 
 .cubes {
-    background-color: sandybrown;
+    color: rgb(56, 56, 56);
+    background-color: lightgray;
     margin: 5px;
+}
+
+.textPadd {
+    padding-left: 10px;
+}
+
+/* OnSale Section */
+
+.onSale {
+    border: 1px solid #2039CC;
 }
 
 
 
 /* Noticias Section */
 
+
+/* Footer CSS */
+
+#page-container {
+   position: relative;
+   min-height: 100vh;
+  }
+
+#content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+  }
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;            /* Footer height */
+  }
 
 
 @media (min-width: 1024px){
