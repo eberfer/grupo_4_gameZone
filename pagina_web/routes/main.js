@@ -7,7 +7,7 @@ const path = require('path');
 // Configuracion de MULTER, seleccion de carpeta de destino 
 const storageDisk = multer.diskStorage({
 	destination: (req, file, cb) => {
-		cb(null, __dirname + '/../../public/images/avatars');
+		cb(null, __dirname + '/../public/images/avatars');
 	},
 	filename: (req, file, cb) => {
 		let imageFinalName = `user_avatar_${Date.now()}${path.extname(file.originalname)}`;
@@ -21,25 +21,26 @@ const upload = multer({ storage: storageDisk });
 const mainController = require('../controllers/mainController');
 const productController = require('../controllers/productController');
 const usersController = require('../controllers/usersController');
+const authMiddleware = require('../middlewares/authMiddleware');
+const guestMiddleware = require('../middlewares/guestMiddleware');
 
-/* GET - home page. */
 router.get('/', mainController.home);
-/* GET - user register page. */
-router.get('/userRegister', usersController.userRegister);
-/* Get - user login. */
-router.get('/userLogin', usersController.userLogin);
-/* GET - Listado de productos. */
-router.get("/products", productController.products)
-/* GET - Agregar nuevo producto. */
+
+router.get('/userRegister', guestMiddleware, usersController.userRegister);
+router.post('/userRegister', upload.single('avatar'), usersController.userStore);
+router.get('/userLogin', guestMiddleware, usersController.userLogin);
+router.post('/userLogin', usersController.processUserLogin);
+router.get('/userProfile', authMiddleware, usersController.profile);
+router.get('/logout', usersController.logout);
+
+router.get("/products", productController.products);
 router.get('/products/newProduct', productController.newProduct);
-/* POST - Guardar el Producto en DB */ 
 router.post('/products/newProduct', productController.guardarProducto);
-/* DELETE - Borrar un Producto en DB */ 
 router.delete('/products/borrar/:id', productController.borrarProducto);
-/* GET - product cart. */
-router.get('/productCart', productController.productCart);
-/* GET - product detail. */
 router.get('/productDetail', productController.productDetail);
+
+router.get('/productCart', productController.productCart);
+
 
 
 module.exports = router;

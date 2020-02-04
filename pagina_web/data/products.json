@@ -8,15 +8,5 @@
   "gameImg": ". . .",
   "Categoria": "Estragegia",
   "creador": "Producto creado por Fer"
- },
- {
-  "id": 2,
-  "Nombre": "Diablo 4",
-  "Descripcion": "Juego de accion ",
-  "Precio": "1000",
-  "Plataforma": "PC",
-  "gameImg": ". . .",
-  "Categoria": "MOBA",
-  "creador": "Producto creado por Fer"
  }
 ]

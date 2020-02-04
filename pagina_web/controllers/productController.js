@@ -4,8 +4,7 @@ const path = require('path');
 const ubicacionProductosJSON = path.join(__dirname, '../data/products.json');
 let contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8');
 
-// const ubicacionProductosJSON = path.join(__dirname, '../data/productos.json');
-// let contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8');
+
 // ************ Controller to read EJS file ************
 
 const controller = {

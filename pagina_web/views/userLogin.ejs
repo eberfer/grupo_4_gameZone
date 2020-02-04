@@ -6,19 +6,19 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-10 col-md-8 col-lg-6">
-            <form>
+            <form action="/userLogin" method="POST">
 
                 <!-- Seccion De Usuario/Email de usuario -->
                 <div class="form-group">
-                    <label for="exampleInputEmail1">User email </label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <label for="inputEmail">User email </label>
+                    <input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="email" placeholder="Enter email">
+                    <small id="email" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
 
                 <!-- Seccion Password -->
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" name="password" class="form-control" id="inputPassword" placeholder="*******">
                 </div>
                 
                 <!-- Boton de envio -->

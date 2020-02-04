@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head')%>
+<%- include('partials/loggedHeader')%>
+
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <img src="/images/avatars/<%=user.avatar%>" class="img-fluid" alt="Profile-IMG">
+            <h2>Welcome: <%=`${user.userName}`%> </h2>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer')%>

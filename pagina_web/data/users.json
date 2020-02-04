@@ -1,0 +1,31 @@
+[
+ {
+  "id": 2,
+  "userName": "StormTrooper",
+  "email": "imperial@empire.com",
+  "password": "$2b$10$o8qEiTXDZelgUxrlg4hPBO2CnRZyukRXn5z9LDjAvnDJ7uT42Zzji",
+  "avatar": "user_avatar_1580441267033.jpg"
+ },
+ {
+  "id": 3,
+  "userName": "darthVader",
+  "email": "lordvader@empire.com",
+  "password": "$2b$10$Svz/uFvrSJ6SrSySZgRNuuxJpMwFsQ6bFX4BSB9RHE1RB/.h9Lsqq",
+  "avatar": "user_avatar_1580785852775.jpg"
+ },
+ {
+  "userName": "StormTrooper",
+  "email": "imperial@empire.com",
+  "password": "$2b$10$F8S4bpGmismR9PEamSG2G.4aiu/pzVMlenjpvp33HXcLMRJ1idLY2",
+  "passwordCheck": "1234",
+  "avatar": "user_avatar_1580789522085.jpg"
+ },
+ {
+  "id": null,
+  "userName": "StormTrooper",
+  "email": "imperial@empire.com",
+  "password": "$2b$10$HZdlAZAwLctrEzzUuTE4mOlaAINgIJ8yWV1KWwXR0pbCZcUYmv7by",
+  "passwordCheck": "1234",
+  "avatar": "user_avatar_1580789654001.jpg"
+ }
+]
