@@ -1,12 +1,11 @@
 [
  {
   "id": 1,
-  "Nombre": "Starcraft",
-  "Descripcion": "Juego de Estrategia",
-  "Precio": "1500",
-  "Plataforma": "PC",
-  "gameImg": ". . .",
-  "Categoria": "Estragegia",
+  "Nombre": "Starcraft 2",
+  "Descripcion": "aosdnaofnaofamnofkadnfoiqnoinoaifnoadfin",
+  "Precio": "1200",
+  "platform": "PC",
+  "gameImg": "FqVg30c.jpg",
   "creador": "Producto creado por Fer"
  }
 ]

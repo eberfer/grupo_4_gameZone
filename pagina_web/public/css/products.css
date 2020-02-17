@@ -1,0 +1,21 @@
+
+
+
+.filterRow {
+    justify-content: center;
+}
+
+.textPadd {
+    padding-left: 5px;
+}
+.cubes {
+    color: rgb(56, 56, 56);
+    background-color: lightgray;
+    justify-self: center;
+}
+
+.gamesRow {
+    display: flex;
+    justify-content: center;
+
+}

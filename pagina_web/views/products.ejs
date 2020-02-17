@@ -3,19 +3,12 @@
 <%- include('partials/head')%>
 <%- include('partials/header')%>
 
-<div class="container">
-    <div class="row justify-content-center">
-        
-        <!-- Left Navigation menu -->
-        <div class="col-md-3 d-none d-md-block">
-            <input type="search">
-            <hr>
-            <hr>
+<div class="container-fluid">
+    <div class="row filterRow justify-content-around">
+        <div class="col-3">
             
             <!-- Listado de categorias -->
-            <h4>Filter by:</h4>
-            
-            <h3>Categorias</h3>
+            <p>Categorias</p>
             <ul>
                 <li>
                     <div class="form-check">
@@ -52,56 +45,50 @@
                     </div>
                 </li>
             </ul>
-            
-            <!-- Listado de Plataformas -->
-            <h3>Plataforma:</h3>
+        </div>
+        
+        <!-- Listado de Plataformas -->
+        <div class="col-3">
+            <p>Plataforma:</p>
             <ul>
                 <li>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">PS4</label>
+                        <input type="checkbox" class="form-check-input" id="check">
+                        <label class="form-check-label" for="check">PS4</label>
                     </div>
                 </li>
                 
                 <li>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">XBOX</label>
+                        <input type="checkbox" class="form-check-input" id="check">
+                        <label class="form-check-label" for="check">XBOX</label>
                     </div>
                 </li>
                 
                 <li>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">PC</label>
+                        <input type="checkbox" class="form-check-input" id="check">
+                        <label class="form-check-label" for="check">PC</label>
                     </div>
                 </li>
             </ul>
-            
         </div>
-        
-        <!-- Listado de Juegos -->
-        <div class="col-8">
-            <div class="row gameCubes">
-
-                <% products.forEach(product => { %>
-                    <div class="col-5 col-md-3 cubes">
-                        <h2> <%= product.id %> </h2>
-                        <b> <%= product.Nombre %> </b><br>
-                        <b> <%= product.creador %> </b>
-                        <form action="/products/borrar/<%= product.id %>?_method=DELETE" method="POST">
-                            <button type="submit">BORRAR</button>
-                        </form>
-                    </div>
-                <% }) %>
-                    
-                
-            </div>    
-            
-        </div>
-        
-        
     </div>
-</div>
-
-<%- include('partials/footer')%>
+    
+    <!-- Listado de Juegos -->
+    <div class="row gamesRow mt-3">
+        <% products.forEach(product => { %>
+            <div class="col-10 cubes p-2">
+                <h5><strong><%= product.Nombre %></strong></h5><br>
+                <b> <img class="img-fluid" src="/../../images/productImg/madden.jpg" alt="game-image"> </b> 
+                <b> $<%= product.Precio %> </b><br>
+                <form class="mt-3" action="/products/borrar/<%= product.id %>?_method=DELETE" method="POST">
+                    <button type="submit">BORRAR</button>
+                </form>
+            </div>
+            <% }) %> 
+            
+        </div>    
+    </div>
+    
+    <%- include('partials/footer')%>

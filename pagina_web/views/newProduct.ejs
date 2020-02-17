@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head')%>
-<%- include('partials/loggedHeader')%>
+<%- include('partials/header')%>
 
 <div class="container">
 	<div class="row justify-content-center mt-3">
 		<div class="col-10 col-md-8 col-lg-6">
 			
 			<h3>New game</h3>
-
+			
 			<form action="/products/newProduct" method="POST">
-			 	<!-- Game Name -->
+				<!-- Game Name -->
 				<div class="form-group">
 					<label for="Nombre">Nombre</label>
 					<input type="text" class="form-control" placeholder="..." name="Nombre" id="Nombre">
@@ -29,21 +29,46 @@
 				</div>				
 				
 				<!-- Platform -->
-				<div class="form-group">
-					<label for="Plataforma">Plataforma</label>
-					<input type="text" class="form-control" placeholder="..." name="Plataforma" id="Plataforma">	
+				<label for="platform">Platform</label>
+				<div class="form-check" >
+					<input type="checkbox" class="form-check-input" name="platform" id="platform" value="PC">
+					<label class="form-check-label" for="platform">PC</label>
 				</div>
+				<div class="form-check">
+					<input type="checkbox" class="form-check-input" name="platform" id="platform" value="XBOX">
+					<label class="form-check-label" for="platform">XBOX</label>
+				</div>
+				<div class="form-check">
+					<input type="checkbox" class="form-check-input" name="platform" id="platform" value="PS4">
+					<label class="form-check-label" for="platform">PS4</label>
+				</div>
+				
 				
 				<!-- Image ADD -->
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<label for="gameImg">gameImg</label>
 					<input type="text" class="form-control" placeholder="..." name="gameImg" id="gameImg">	
+				</div> -->
+				
+				<div class="form-group">
+					<label for="gameImg">Game Image</label>
+					<input type="file" id="gameImg" name="gameImg">
 				</div>
 				
+				
 				<!-- Game Category -->
-				<div class="form-group">
-					<label for="Categoria">Categoria</label>
-					<input type="text" class="form-control" placeholder="..." name="Categoria" id="Categoria">
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<label class="input-group-text" for="gameCategory">Category</label>
+					</div>
+					<select class="custom-select" id="gameCategory">
+						<option selected>...</option>
+						<option value="Action">Action</option>
+						<option value="Strategy">Strategy</option>
+						<option value="FPS">FPS</option>
+						<option value="MOBA">MOBA</option>
+						<option value="RPG">RPG</option>
+					</select>
 				</div>
 				
 				<button type="submit">Guardar</button>

@@ -4,10 +4,10 @@
 			
 			<!-- Main Header -->
 			
-			<div class="container-fluid">
+			<div class="container-fluid mainNavbar">
 				<div class="row main-header mb-4">
 					<div class="col-6 col-sm-4 col-lg-2 offset-lg-1">
-						<img class="img-fluid" src="/images/LogoTextoAZ.png">
+						<img class="img-fluid" width="600px" src="/images/LogoTextoAZ.png">
 					</div>
 					
 					<!-- Boton con menu desplegable -->
@@ -23,12 +23,21 @@
 									
 									<a class="list-menu" href="/">Home</a>
 									<hr>
-									<a class="list-menu" href="/products">Juegos</a>
+									<a class="list-menu" href="/products">Games</a>
 									<hr>
+									<% if (isLogged) { %>
+									<a class="list-menu" href="/userProfile">Profile</a>
+									<hr>
+									<a class="list-menu" href="/logout">Logout</a>
+									<hr>	
+
+									<% } else { %>
+
 									<a class="list-menu" href="/userRegister">Register</a>
 									<hr>
 									<a class="list-menu" href="/userLogin">Login</a>
-									
+
+									<% } %>
 								</div>
 								
 							</div>
@@ -45,14 +54,23 @@
 								<a href="/" class="nav-link">Home</a>
 							</li>
 							<li class="nav-item">
-								<a href="/products" class="nav-link">Juegos</a>
+								<a href="/products" class="nav-link">Games</a>
 							</li>
+							<% if (isLogged) { %>
+							<li class="nav-item">
+								<a href="/userProfile" class="nav-link">Profile</a>
+							</li>
+							<li class="nav-item">
+								<a href="/logout" class="nav-link">Logout</a>
+							</li>
+							<% } else { %>
 							<li class="nav-item">
 								<a href="/userRegister" class="nav-link">Register</a>
 							</li>
 							<li class="nav-item">
 								<a href="/userLogin" class="nav-link">Login</a>
 							</li>
+							<% } %>		
 						</ul>
 						
 					</div>

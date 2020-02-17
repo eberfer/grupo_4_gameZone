@@ -14,6 +14,16 @@ function getAllUsers () {
 	return finalUsers;
 }
 
+
+function generateUserId () {
+	let allUsers = getAllUsers();
+	if (allUsers.length == 0) {
+		return 1;
+	}
+	let lastUser = allUsers.pop();
+	return lastUser.id + 1;
+}
+
 function storeUser(newUserData) {
 	// Traer a todos los usuarios
 	let allUsers = getAllUsers();
@@ -29,16 +39,6 @@ function storeUser(newUserData) {
 	// Finalmente, retornar la información del usuario nuevo
 	return newUserData;
 }
-
-function generateUserId () {
-	let allUsers = getAllUsers();
-	if (allUsers.length == 0) {
-		return 1;
-	}
-	let lastUser = allUsers.pop();
-	return lastUser.id + 1;
-}
-
 function getUserByEmail(email) {
 	let allUsers = getAllUsers();
 	let userToFind = allUsers.find(oneUser => oneUser.email == email);
@@ -99,7 +99,7 @@ const controller = {
 					res.cookie('userCookie', user.id, { maxAge: 60000 * 60 });
 				}
 				// Redireccionamos al visitante a su perfil
-				res.redirect(`/userProfile/`);
+				res.redirect('userProfile');
 			} else {
 				res.send('Credenciales inválidas');
 			}

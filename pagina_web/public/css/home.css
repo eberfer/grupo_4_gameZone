@@ -23,7 +23,7 @@ body {
 }
 /* barra superior de navegacion*/
 
-.container-fluid .row {
+.mainNavbar {
     background-color: rgba(7, 9, 31, 0.719);
 }
 
@@ -112,22 +112,6 @@ ul .nav {
 .imgSlide {
     justify-content: center;
     margin-bottom: 20px;
-}
-
-/* Products Section */
-
-.gameCubes {
-
-}
-
-.cubes {
-    color: rgb(56, 56, 56);
-    background-color: lightgray;
-    margin: 5px;
-}
-
-.textPadd {
-    padding-left: 10px;
 }
 
 /* OnSale Section */
