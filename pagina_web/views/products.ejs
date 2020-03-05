@@ -6,89 +6,21 @@
 <div class="container-fluid">
     <div class="row filterRow justify-content-around">
         <div class="col-3">
-            
-            <!-- Listado de categorias -->
-            <p>Categorias</p>
-            <ul>
-                <li>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="Action">
-                        <label class="form-check-label" for="Action">Action</label>
+            <!-- Listado de Juegos -->
+            <h3>Listado de juegos</h3>
+            <div class="row gamesRow mt-3">
+                <% products.forEach(product => { %>
+                    <div class="col-10 cubes p-2">
+                        <h5><strong><%= product.Nombre %></strong></h5><br>
+                        <b> <img class="img-fluid" src="/../../images/productImg/madden.jpg" alt="game-image"> </b> 
+                        <b> $<%= product.Precio %> </b><br>
+                        <form class="mt-3" action="/products/borrar/<%= product.id %>?_method=DELETE" method="POST">
+                            <button type="submit">BORRAR</button>
+                        </form>
                     </div>
-                </li>
-                
-                <li>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="Sports">
-                        <label class="form-check-label" for="Sports">Sports</label>
-                    </div>
-                </li>
-                
-                <li>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="Roleplay">
-                        <label class="form-check-label" for="Roleplay">Roleplay</label>
-                    </div>
-                </li>
-                
-                <li>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="FPS">
-                        <label class="form-check-label" for="FPS">FPS</label>
-                    </div>
-                </li>
-                
-                <li>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="Strategy">
-                        <label class="form-check-label" for="Strategy">Strategy</label>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        
-        <!-- Listado de Plataformas -->
-        <div class="col-3">
-            <p>Plataforma:</p>
-            <ul>
-                <li>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="check">
-                        <label class="form-check-label" for="check">PS4</label>
-                    </div>
-                </li>
-                
-                <li>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="check">
-                        <label class="form-check-label" for="check">XBOX</label>
-                    </div>
-                </li>
-                
-                <li>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="check">
-                        <label class="form-check-label" for="check">PC</label>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    
-    <!-- Listado de Juegos -->
-    <div class="row gamesRow mt-3">
-        <% products.forEach(product => { %>
-            <div class="col-10 cubes p-2">
-                <h5><strong><%= product.Nombre %></strong></h5><br>
-                <b> <img class="img-fluid" src="/../../images/productImg/madden.jpg" alt="game-image"> </b> 
-                <b> $<%= product.Precio %> </b><br>
-                <form class="mt-3" action="/products/borrar/<%= product.id %>?_method=DELETE" method="POST">
-                    <button type="submit">BORRAR</button>
-                </form>
-            </div>
-            <% }) %> 
-            
+                    <% }) %> 
+            </div>        
         </div>    
     </div>
-    
-    <%- include('partials/footer')%>
+</div>            
+<%- include('partials/footer')%>

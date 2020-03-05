@@ -7,5 +7,14 @@
   "platform": "PC",
   "gameImg": "FqVg30c.jpg",
   "creador": "Producto creado por Fer"
+ },
+ {
+  "id": 2,
+  "Nombre": "GTA V",
+  "Descripcion": "juego de aventura",
+  "Precio": "1500",
+  "platform": "PC",
+  "gameImg": "FqVg30c.jpg",
+  "creador": "Producto creado por Fer"
  }
 ]
