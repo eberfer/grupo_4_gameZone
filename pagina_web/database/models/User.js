@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         email: dataTypes.STRING,
         password: dataTypes.STRING,
-        admin: dataTypes.BOOLEAN        
+        admin: dataTypes.TINYINT        
         };
     let config = {
         timestamps: false
@@ -20,6 +20,13 @@ module.exports = (sequelize, dataTypes) => {
 
     const User = sequelize.define(alias, cols, config);
 
-
+    User.associate = (models) => {
+        User.belongsToMany(models.Games, {
+            as: "Games",
+            through: "UserGame",
+            foreignKey: "user_id",
+            otherKey: "game_id"
+        })
+    }
     return User;
 }

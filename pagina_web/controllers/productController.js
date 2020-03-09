@@ -1,6 +1,7 @@
-const fs = require('fs');
-const path = require('path');
+
 const db = require("../database/models")
+const sequelize = db.sequelize;
+const Op = db.Sequelize.Op;
 // const ubicacionProductosJSON = path.join(__dirname, '../data/products.json');
 // let contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8');
 
@@ -9,37 +10,43 @@ const db = require("../database/models")
 
 const controller = {
   
+  // Listado de productos
+  list: (req, res) => {
+    db.Games
+      .findAll({
+        include: ["genre", "user", "platform"]
+      })
+      .then(products => {
+        return res.render("products", {products})
+      })
+      .catch(error => console.log(error)) 
+  },
+
   // Creacion de producto
   newProduct: (req, res) => {
-    res.render("newProduct");
-  },
-  // Listado de productos
- 
-  list: (req, res) => {
-    let products = JSON.parse(contenidoProductosJSON);
-    res.render('products', { products })
+    db.Genres
+    .findAll()
+    .then(genres => {
+      db.Platforms
+        .findAll()
+        .then(platforms => {
+          return res.render("newProduct", {genres, platforms});
+        });
+    })
+    
   },
   
   guardarProducto: (req, res) => {
-    db.Games.create({
-      name: req.body.name,
-      price: req.body.price,
-      genre_id: req.body.genre,
-      platform_id: req.body.platform,
-      detail: req.body.detail
-    });    
+    let gameInfo = req.body;
+
+    db.Games.create(gameInfo
+    );
+    console.log(gameInfo);
+        
     res.redirect('/products');
   },
   
-  borrarProducto: (req, res) => {
-    let productosArray = JSON.parse(contenidoProductosJSON);
-    let productosSinElQueBorramos = productosArray.filter(function (product) {
-      return product.id != req.params.id;
-    })
-    // guardo el array con los productos finales
-    fs.writeFileSync(ubicacionProductosJSON, JSON.stringify(productosSinElQueBorramos, null, ' '));
-    res.redirect('/');
-  },
+  borrarProducto: (req, res) => {},
   // Detalle de productos
   productDetail: (req, res) => {
     res.render("productDetail");

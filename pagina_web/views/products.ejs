@@ -11,9 +11,9 @@
             <div class="row gamesRow mt-3">
                 <% products.forEach(product => { %>
                     <div class="col-10 cubes p-2">
-                        <h5><strong><%= product.Nombre %></strong></h5><br>
+                        <h5><strong><%= product.name %></strong></h5><br>
                         <b> <img class="img-fluid" src="/../../images/productImg/madden.jpg" alt="game-image"> </b> 
-                        <b> $<%= product.Precio %> </b><br>
+                        <b> $<%= product.price %> </b><br>
                         <form class="mt-3" action="/products/borrar/<%= product.id %>?_method=DELETE" method="POST">
                             <button type="submit">BORRAR</button>
                         </form>

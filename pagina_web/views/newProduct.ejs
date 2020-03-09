@@ -13,34 +13,34 @@
 				<!-- Game Name -->
 				<div class="form-group">
 					<label for="Nombre">Nombre</label>
-					<input type="text" class="form-control" placeholder="..." name="Nombre" id="Nombre">
+					<input type="text" class="form-control" placeholder="..." name="name" id="Nombre">
 				</div>
 				
 				<!-- Descripcion del juego -->
 				<div class="form-group">
 					<label for="Detail">Detail</label>
-					<input type="text" class="form-control" placeholder="..." name="Detail" id="Detail">
+					<input type="text" class="form-control" placeholder="..." name="detail" id="Detail">
 				</div>
 				
 				<!-- Price -->
 				<div class="form-group">
 					<label for="Precio">Precio</label>
-					<input type="number" class="form-control" placeholder="..." name="Precio" id="Precio">	
+					<input type="number" class="form-control" placeholder="..." name="price" id="Precio">	
 				</div>				
 				
 				<!-- Platform -->
-				<label for="platform">Platform</label>
-				<div class="form-check" >
-					<input type="checkbox" class="form-check-input" name="platform" id="platform" value="PC">
-					<label class="form-check-label" for="platform">PC</label>
-				</div>
-				<div class="form-check">
-					<input type="checkbox" class="form-check-input" name="platform" id="platform" value="XBOX">
-					<label class="form-check-label" for="platform">XBOX</label>
-				</div>
-				<div class="form-check">
-					<input type="checkbox" class="form-check-input" name="platform" id="platform" value="PS4">
-					<label class="form-check-label" for="platform">PS4</label>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<label class="input-group-text" for="platform">Platform</label>
+					</div>
+					<select class="custom-select" id="platform" name="platform">
+						<option selected>...</option>
+						<% for (let i = 0; i < platforms.length; i ++){ %>
+						<option value="<%= platforms[i].id">
+							<%= platforms[i].name %>
+						</option>
+						<% } %>
+					</select>
 				</div>
 				
 				
@@ -61,13 +61,13 @@
 					<div class="input-group-prepend">
 						<label class="input-group-text" for="gameCategory">Category</label>
 					</div>
-					<select class="custom-select" id="gameCategory">
+					<select class="custom-select" id="gameCategory" name="genre">
 						<option selected>...</option>
-						<option value="Action">Action</option>
-						<option value="Strategy">Strategy</option>
-						<option value="FPS">FPS</option>
-						<option value="MOBA">MOBA</option>
-						<option value="RPG">RPG</option>
+						<% for(let i=0; i < genres.length; i++){ %>
+						<option value="<%= genres[i].id %>">
+							<%= genres[i].name %>
+						</option>
+						<% } %>
 					</select>
 				</div>
 				
