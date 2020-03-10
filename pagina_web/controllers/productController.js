@@ -23,7 +23,7 @@ const controller = {
   },
 
   // Creacion de producto
-  newProduct: (req, res) => {
+  create: (req, res) => {
     db.Genres
     .findAll()
     .then(genres => {
@@ -36,8 +36,15 @@ const controller = {
     
   },
   
-  guardarProducto: (req, res) => {
-    let gameInfo = req.body;
+  store: (req, res) => {
+    let gameInfo = {
+      name: req.body.name,
+      price: req.body.price,
+      genre: req.body.genre,
+      platform: req.body.platform,
+      detail: req.body.detail,
+      img: req.body.gameImg
+    };
 
     db.Games.create(gameInfo
     );
@@ -46,10 +53,16 @@ const controller = {
     res.redirect('/products');
   },
   
-  borrarProducto: (req, res) => {},
+  borrarProducto: (req, res) => {
+
+  },
   // Detalle de productos
-  productDetail: (req, res) => {
-    res.render("productDetail");
+  detail: (req, res) => {
+    db.Games
+      .findByPk()
+      .then()
+      .catch();
+    res.render("detail");
   },
   // Carrito de productos
   productCart: (req, res) => {

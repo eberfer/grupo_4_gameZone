@@ -10,7 +10,8 @@ module.exports = (sequelize, dataTypes) => {
         game_id: dataTypes.INTEGER
         }
     let config = {
-        timestamps: false
+        timestamps: false,
+        tablename: "usergame"
     };
 
     const UserGame = sequelize.define(alias, cols, config);

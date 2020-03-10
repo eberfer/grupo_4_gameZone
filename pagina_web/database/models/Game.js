@@ -10,11 +10,10 @@ module.exports = (sequelize, dataTypes) => {
         price: dataTypes.INTEGER,
         genre_id: dataTypes.INTEGER,
         platform_id: dataTypes.INTEGER,
-        detail: dataTypes.STRING
+        detail: dataTypes.STRING,
+        gameImg: dataTypes.STRING
     }
-    let config = {
-        timestamps: false
-    }
+    let config = {}
 
     const Game = sequelize.define(alias, cols, config)
 
@@ -28,7 +27,7 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "genre_id"
         });
         Game.belongsToMany(models.Users, {
-            as: "Users",
+            as: "User",
             through: "UserGame",
             foreignKey: "game_id",
             otherKey: "user_id"

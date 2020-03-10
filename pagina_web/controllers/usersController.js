@@ -1,85 +1,27 @@
 const fs = require('fs');
 const bcrypt = require('bcrypt');
 const path = require('path')
+const db = require("../database/models")
+const sequelize = db.sequelize;
+const Op = db.Sequelize.Op;
 
-// Constants
-const userFilePath = __dirname + '/../data/users.json';
-
-
-
-// Helper Functions
-function getAllUsers () {
-	let usersFileContent = fs.readFileSync(userFilePath, 'utf-8');
-	let finalUsers = usersFileContent == '' ? [] : JSON.parse(usersFileContent); 
-	return finalUsers;
-}
-
-
-function generateUserId () {
-	let allUsers = getAllUsers();
-	if (allUsers.length == 0) {
-		return 1;
-	}
-	let lastUser = allUsers.pop();
-	return lastUser.id + 1;
-}
-
-function storeUser(newUserData) {
-	// Traer a todos los usuarios
-	let allUsers = getAllUsers();
-	// Generar el ID y asignarlo al nuevo usuario
-	newUserData = {
-		id: generateUserId(),
-		...newUserData
-	};
-	// Insertar el nuevo usuario en el array de TODOS los usuarios
-	allUsers.push(newUserData);
-	// Volver a reescribir el users.json
-	fs.writeFileSync(userFilePath, JSON.stringify(allUsers, null, ' '));
-	// Finalmente, retornar la información del usuario nuevo
-	return newUserData;
-}
-function getUserByEmail(email) {
-	let allUsers = getAllUsers();
-	let userToFind = allUsers.find(oneUser => oneUser.email == email);
-	return userToFind;
-}
-
-function getUserById(id) {
-	let allUsers = getAllUsers();
-	let userToFind = allUsers.find(oneUser => oneUser.id == id);
-	return userToFind;
-}
 
 // ************ Controller to read EJS file ************
-const controller = {
-	
+const controller = {	
 	userRegister: (req, res) => {
 		res.render("userRegister");
 	},
 	
 	// Almacenando el usuario creado
-	userStore: (req, res) => {		
-		// Hash del password
-		req.body.password = bcrypt.hashSync(req.body.password, 10);
-
-		// Eliminar la propiedad re_password
-		delete req.body.re_password;
-
-		// Asignar el nombre final de la imagen
-		req.body.avatar = req.file.filename;
-
-		// Guardar al usario y como la función retorna la data del usuario lo almacenamos en ela variable "user"
-		let user = storeUser(req.body);
-
-		// Setear en session el ID del usuario nuevo para auto loguearlo
-		req.session.userId = user.id;
-
-		// Setear la cookie para mantener al usuario logueado
-		res.cookie('userCookie', user.id, { maxAge: 60000 * 60 });
-
-		// Redirección al profile
-		return res.redirect('/userProfile');
+	userStore: (req, res) => {
+		db.Users.create({
+			userName: req.body.userName,
+			email: req.body.email,
+			password: bcrypt.hashSync(req.body.password, 10),
+			avatar: req.file.filename
+		}).then(newUser => {
+			res.redirect('/userLogin');
+		}).catch(error = console.log(error));
 	},
 	userLogin: (req, res) => {
 		res.render("userLogin");
