@@ -7,13 +7,16 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER
         },
         name: dataTypes.STRING,
+        expansion: dataTypes.STRING,
         price: dataTypes.INTEGER,
         genre_id: dataTypes.INTEGER,
         platform_id: dataTypes.INTEGER,
         detail: dataTypes.STRING,
         gameImg: dataTypes.STRING
     }
-    let config = {}
+    let config = {
+        timestamps: false
+    }
 
     const Game = sequelize.define(alias, cols, config)
 
@@ -27,7 +30,7 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "genre_id"
         });
         Game.belongsToMany(models.Users, {
-            as: "User",
+            as: "user",
             through: "UserGame",
             foreignKey: "game_id",
             otherKey: "user_id"

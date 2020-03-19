@@ -1,0 +1,55 @@
+
+/* barra superior de navegacion*/
+
+.mainNavbar {
+    background-color: rgba(7, 9, 31, 0.719);
+}
+
+.main-header {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+/* boton desplegable de navegacion */
+.right-navbar {
+    background-color: transparent;
+    font-size: 19px;
+    text-align: center;
+    color: lightgray
+}
+
+ul li {
+    list-style: none;
+}
+
+a:hover {
+    color: rgb(253, 158, 16);
+    text-decoration: lightsteelblue;
+    transition: 0.3s;
+}
+
+ul .nav {
+    text-align: center;
+}
+/* css para menu de navegacion desplegable en VP Xsmall hasta Small */
+.colapse-nav {
+    display: flex;
+   flex-direction: row-reverse; 
+}
+
+.card-body {
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+
+/* css para menu de navegacion clasico en VP Medium en adelante */
+.nav-link {
+    padding: 5px 10px;
+}
+
+.nav {
+    padding-left: 46px;
+}
+/*estilo header - fin*/

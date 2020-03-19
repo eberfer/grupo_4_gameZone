@@ -7,11 +7,11 @@ const Op = db.Sequelize.Op;
 
 
 // ************ Controller to read EJS file ************
-const controller = {	
+const controller = {
+	// Vista de registro de usuario	
 	userRegister: (req, res) => {
 		res.render("userRegister");
-	},
-	
+	},	
 	// Almacenando el usuario creado
 	userStore: (req, res) => {
 		db.Users.create({

@@ -7,70 +7,75 @@
 <div class="container">
     <div class="row mt-3">
         
-        <form action= "/userRegister" method="POST" enctype="multipart/form-data">
+        <form action= "/userRegister" method="POST" enctype="multipart/form-data" id="userRegForm">
             <!-- Seccion Nombre de Usuario -->
-            <div class="col">
+            <div class="col-10">
                 <div class="form-group">
                     <label for="userName">Username</label>
-                    <input type="text" name="userName" class="form-control" id="userName" aria-describedby="emailHelp">
+                    <input type="text" name="userName" data-name="nombre de usuario" class="form-control" id="userName" aria-describedby="emailHelp">
+                    <p class="feedback">Aqui va el error</p>
                 </div>
             </div>
             
             <!-- Seccion de Email -->
-            <div class="col">
+            <div class="col-10">
                 <div class="form-group">
                     <label for="emailAddres">Email address</label>
-                    <input type="email" name="email" class="form-control" id="emailAddres" aria-describedby="email">
-                    <small id="email" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <input type="text" name="email" data-name="email" class="form-control" id="emailAddres" aria-describedby="email">
+                    <p class="feedback">Aqui va el error</p>
                 </div>
             </div>
             
             
             <!-- Seccion Password -->
-            <div class="col">
+            <div class="col-10">
                 <div class="form-group">
                     <label for="Password">Password</label>
-                    <input type="password" name="password" class="form-control" id="Password">
+                    <input type="password" name="password" data-name="contraseña" class="form-control" id="Password">
+                    <p class="feedback">Aqui va el error</p>
                 </div> 
             </div>
             
             
             <!-- confirmacion de Password -->
-            <div class="col">
+            <div class="col-10">
                 <div class="form-group">
                     <label for="rePassword">Confirm Password</label>
-                    <input type="password" name="rePassword" class="form-control" id="rePassword">
+                    <input type="password" name="rePassword" data-name="repetir contraseña" class="form-control" id="rePassword">
+                    <p class="feedback">Aqui va el error</p>
                 </div>
             </div>
 
             <!-- Seleccion de Avatar -->
-            <div class="col">
+            <div class="col-10">
                 <div class="form-group">
                     <label>Avatar:</label>
-                    <input type="file" name="avatar">
+                    <input type="file" name="avatar" data-name="avatar">
+                    <p class="feedback">Aqui va el error</p>
                 </div>
 			</div>
             
             
             <!-- Seleccion de pais -->
-            <div class="col">
+            <div class="col-10">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="seleccionDePais">Pais</label>
                     </div>
-                    <select class="custom-select" id="seleccionDePais">
+                    <select class="custom-select" name="country" data-name="país" id="seleccionDePais">
                         <option selected>Choose Country</option>
-                        <option value="1">Argentina</option>
-                        <option value="2">Colombia</option>
-                        <option value="3">Venezuela</option>
-                        <option value="4">Uruguay</option>
-                    </select>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Venezuela">Venezuela</option>
+                        <option value="Uruguay">Uruguay</option>
+                    </select><br>
                 </div> 
+                <p class="feedback">Aqui va el error</p>
             </div>
             
             <!-- Boton de confirmacion y Registro -->
             <div class="col">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btnColor">Submit</button>
                 
                 
             </div>

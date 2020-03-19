@@ -1,80 +1,67 @@
-<body>
-	<div id="page-container">
-		<div id="content-wrap">
-			
-			<!-- Main Header -->
-			
-			<div class="container-fluid mainNavbar">
-				<div class="row main-header mb-4">
-					<div class="col-6 col-sm-4 col-lg-2 offset-lg-1">
-						<img class="img-fluid" width="600px" src="/images/LogoTextoAZ.png">
-					</div>
-					
-					<!-- Boton con menu desplegable -->
-					
-					<div class="right-navbar col-4 d-md-none align-self-center offset-2">
-						<div class="right-navbar" data-toggle="collapse" href="#collapseExample" role="div" aria-expanded="false" aria-controls="collapseExample">
-							<!-- barras de menu desplegable -->
-							<i class="fas fa-bars"></i>
-						</div>
-						<div class="collapse" id="collapseExample">
-							<div class="card-body">
-								<div class="colapse-nav nav">
-									
-									<a class="list-menu" href="/">Home</a>
-									<hr>
-									<a class="list-menu" href="/products">Games</a>
-									<hr>
-									<% if (isLogged) { %>
-									<a class="list-menu" href="/userProfile">Profile</a>
-									<hr>
-									<a class="list-menu" href="/logout">Logout</a>
-									<hr>	
-
-									<% } else { %>
-
-									<a class="list-menu" href="/userRegister">Register</a>
-									<hr>
-									<a class="list-menu" href="/userLogin">Login</a>
-
-									<% } %>
-								</div>
-								
-							</div>
-						</div>
-						
-					</div>
-					
-					<!-- menu comun de navegacion en ViewPort MD & LG -->
-					
-					<div class="menu-clasico col-5 col-md-6 d-none d-md-block offset-md-2 align-self-center">
-						
-						<ul class="nav">
-							<li class="nav-item">
-								<a href="/" class="nav-link">Home</a>
-							</li>
-							<li class="nav-item">
-								<a href="/products" class="nav-link">Games</a>
-							</li>
-							<% if (isLogged) { %>
-							<li class="nav-item">
-								<a href="/userProfile" class="nav-link">Profile</a>
-							</li>
-							<li class="nav-item">
-								<a href="/logout" class="nav-link">Logout</a>
-							</li>
-							<% } else { %>
-							<li class="nav-item">
-								<a href="/userRegister" class="nav-link">Register</a>
-							</li>
-							<li class="nav-item">
-								<a href="/userLogin" class="nav-link">Login</a>
-							</li>
-							<% } %>		
-						</ul>
-						
-					</div>
-				</div>
-				
+<!-- contenedor principal -->
+<div class="container-fluid" id="page-container" id="content-wrap">
+	<!-- Barra de navegacion -->
+	<div class="row mainNavbar main-header mb-4">
+		<div class="col-6 col-sm-4 col-lg-2 offset-lg-1">
+			<img class="img-fluid" width="600px" src="/images/newestLogo.png">
+		</div>
+		
+		<!-- Boton con menu desplegable -->
+		
+		<div class="right-navbar col-4 d-md-none align-self-center offset-2">
+			<div class="right-navbar" data-toggle="collapse" href="#collapseExample" role="div" aria-expanded="false" aria-controls="collapseExample">
+				<!-- barras de menu desplegable -->
+				<i class="fas fa-bars"></i>
 			</div>
+			<div class="collapse" id="collapseExample">
+				<div class="card-body">
+					<div class="colapse-nav nav">
+						
+						<a class="list-menu" href="/">Home</a><hr>
+						<a class="list-menu" href="/products">Games</a><hr>
+						<% if (isLogged) { %>
+						<a class="list-menu" href="/userProfile">Profile</a><hr>
+						<a class="list-menu" href="/logout">Logout</a><hr>
+						<% } else { %>
+						<a class="list-menu" href="/userRegister">Register</a><hr>
+						<a class="list-menu" href="/userLogin">Login</a>
+						<% } %>
+					</div>
+					
+				</div>
+			</div>
+			
+		</div>
+		
+		<!-- menu comun de navegacion en ViewPort MD & LG -->
+		
+		<div class="menu-clasico col-5 col-md-6 d-none d-md-block offset-md-2 align-self-center">
+			
+			<ul class="nav">
+				<li class="nav-item">
+					<a href="/" class="nav-link">Home</a>
+				</li>
+				<li class="nav-item">
+					<a href="/products" class="nav-link">Games</a>
+				</li>
+				<% if (isLogged) { %>
+				<li class="nav-item">
+					<a href="/userProfile" class="nav-link">Profile</a>
+				</li>
+				<li class="nav-item">
+					<a href="/logout" class="nav-link">Logout</a>
+				</li>
+				<% } else { %>
+				<li class="nav-item">
+					<a href="/userRegister" class="nav-link">Register</a>
+				</li>
+				<li class="nav-item">
+					<a href="/userLogin" class="nav-link">Login</a>
+				</li>
+				<% } %>		
+			</ul>
+			
+		</div>
+	</div>
+
 			

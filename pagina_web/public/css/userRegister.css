@@ -1,0 +1,19 @@
+
+.feedback {
+    display: none;
+    color: rgb(255, 46, 46);
+    font-size: 15px;
+}
+
+.error {
+    border:solid 2px rgb(255, 46, 46);
+}
+/* Selector de hermanos */
+/*
+  Cuando un campo tiene la clase error,
+  entonces el hermano con clase feedback queda con display block.
+ */
+
+.error ~ .feedback {
+    display: block;
+}

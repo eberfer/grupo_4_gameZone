@@ -1,0 +1,26 @@
+
+
+.detailBackground {
+    background-color: rgba(7, 9, 31, 0.719);
+    border-radius: 5px;
+    padding-left: 0px;
+}
+
+.btnColor {
+    
+    transition: 0.2s;    
+    color: rgb(15, 24, 85);
+    border: solid 1px lightgray;
+    background-color: lightgray;
+}
+
+.btnColor:hover {
+    border-radius: 3px;
+    color: rgb(253, 158, 16);
+    border: solid 1px rgb(253, 158, 16);
+    background-color: rgba(7, 9, 31, 0.719);
+}
+
+.gameDescription{
+    font-size: 15px;
+}

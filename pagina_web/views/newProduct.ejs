@@ -10,10 +10,17 @@
 			<h3>New game</h3>
 			
 			<form action="/products/newProduct" method="POST">
-				<!-- Game Name -->
+				<!-- Nombre de juego -->
 				<div class="form-group">
 					<label for="Nombre">Nombre</label>
 					<input type="text" class="form-control" placeholder="..." name="name" id="Nombre">
+				</div>
+
+				<!-- Nombre de version/expansion -->
+
+				<div class="form-group">
+					<label for="Version/Expansion">Version/Expansion</label>
+					<input type="text" class="form-control" placeholder="..." name="expansion" id="Version/Expansion">
 				</div>
 				
 				<!-- Descripcion del juego -->
@@ -33,13 +40,15 @@
 					<div class="input-group-prepend">
 						<label class="input-group-text" for="platform">Platform</label>
 					</div>
-					<select class="custom-select" id="platform" name="platform">
+					<select class="custom-select" id="platform" name="platform_id">
 						<option selected>...</option>
-						<% for (let i = 0; i < platforms.length; i ++){ %>
-						<option value="<%= platforms[i].id">
-							<%= platforms[i].name %>
-						</option>
-						<% } %>
+
+						<% platforms.forEach(onePlatform => { %>
+							<option value="<%= onePlatform.id %>">
+								<%= onePlatform.name %>
+							</option>
+						<% }) %>
+						
 					</select>
 				</div>
 				
@@ -61,13 +70,13 @@
 					<div class="input-group-prepend">
 						<label class="input-group-text" for="gameCategory">Category</label>
 					</div>
-					<select class="custom-select" id="gameCategory" name="genre">
+					<select class="custom-select" id="gameCategory" name="genre_id">
 						<option selected>...</option>
-						<% for(let i=0; i < genres.length; i++){ %>
-						<option value="<%= genres[i].id %>">
-							<%= genres[i].name %>
-						</option>
-						<% } %>
+						<% genres.forEach(oneGenre => { %>
+							<option value="<%= oneGenre.id %>">
+								<%= oneGenre.name %>
+							</option>
+						<% }) %>
 					</select>
 				</div>
 				

@@ -8,42 +8,45 @@ const Op = db.Sequelize.Op;
 
 // ************ Controller to read EJS file ************
 
-const controller = {
-  
+const controller = {  
   // Listado de productos
   list: (req, res) => {
-    db.Games
-      .findAll({
-        include: ["genre", "user", "platform"]
-      })
-      .then(products => {
-        return res.render("products", {products})
-      })
-      .catch(error => console.log(error)) 
+     db.Games
+       .findAll({
+         include: ["genre", "user", "platform"]
+       })
+       .then(games => {
+         console.log(games);
+         
+         return res.render("products", {games})
+       })
+       .catch(error => console.log(error)) 
   },
 
   // Creacion de producto
   create: (req, res) => {
-    db.Genres
-    .findAll()
-    .then(genres => {
-      db.Platforms
-        .findAll()
-        .then(platforms => {
-          return res.render("newProduct", {genres, platforms});
-        });
-    })
-    
+     db.Genres
+     .findAll()
+     .then(genres => {
+       db.Platforms
+         .findAll()
+         .then(platforms => {           
+           return res.render("newProduct", {platforms, genres});
+          })
+          .catch(error => {console.log(error)})
+      })      
+      .catch(error => {console.log(error)});
   },
   
   store: (req, res) => {
     let gameInfo = {
       name: req.body.name,
-      price: req.body.price,
-      genre: req.body.genre,
-      platform: req.body.platform,
+      expansion: req.body.expansion,
       detail: req.body.detail,
-      img: req.body.gameImg
+      price: req.body.price,
+      platform: req.body.platform,
+      img: req.body.gameImg,
+      genre: req.body.genre
     };
 
     db.Games.create(gameInfo
@@ -52,17 +55,26 @@ const controller = {
         
     res.redirect('/products');
   },
+
+  edit: (req, res) => {
+    
+  },
   
-  borrarProducto: (req, res) => {
+  delete: (req, res) => {
 
   },
   // Detalle de productos
   detail: (req, res) => {
-    db.Games
-      .findByPk()
-      .then()
-      .catch();
-    res.render("detail");
+     db.Games
+       .findByPk(req.params.id, {
+         include: ["platform", "genre"]
+       })
+       .then(game => {
+         console.log(game.genre_id.name);
+         
+         return res.render("detail", {game})
+       })
+       .catch(error => console.log(error));
   },
   // Carrito de productos
   productCart: (req, res) => {

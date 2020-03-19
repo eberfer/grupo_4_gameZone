@@ -3,53 +3,34 @@
 <%- include('partials/head')%>
 <%- include('partials/header')%>
 
-                        <!-- Imagen principal de Product Detail -->
+<!-- Imagen principal de Product Detail -->
 
-<div class="container mt-3">
-    <div class="row mainImg">
-        <div class="col-10">
-            <img class="img-fluid" src="images/carousel/fifa20.jpg" alt="Product image">            
+<div class="container ">
+    <!-- imagen del detalle -->
+    <div class="row detailBackground">
+        <div class="col-10 col-lg-8 pl-0">
+            <img class="img-fluid" src="/images/carousel/starwars-battlefront2.jpg" alt="Game img">
+        </div>
+        <!-- Titulo y descripcion del juego -->
+        <div class="col-4">
+            <div class="col mt-1">
+                <h5><strong> <%= game.name  %>  </strong></h5>
+                <p class="gameDescription"> <%= game.detail %>  </p>
+            </div>
+            <div class="col">
+                <p>Genre: <%=  game.genre_id.name %>   <br>
+                Platform:  <i class="fab fa-windows"></i>
+                </p>
+                <button type="submit" class="btn btnColor">Buy Now - $ <%= game.price %>  </button>            
+            </div>
+            
+        </div>
+        <div class="col-10 col-lg-8 pl-0">
+            box of images
         </div>
     </div>
-
-                        <!-- Menu de imagenes del juego -->
-
-    <div class="row no-gutters imgSlide">
-
-        <div class="col-4 col-md-3 col-lg-2">
-            <img class="img-fluid" src="images/carousel/Battlefield.jpg" alt="Product img">
-        </div>
-
-        <div class="col-4 col-md-3 col-lg-2">
-            <img class="img-fluid" src="images/carousel/CyberPunk.jpg" alt="Product Img">
-        </div>
-
-        <div class="col-4 col-md-3 col-lg-2">
-            <img class="img-fluid" src="images/carousel/LeagueOfLegends.jpg" alt="Product Img">
-        </div>
-
-        <div class="col-4 col-md-3 col-lg-2">
-            <img class="img-fluid" src="images/carousel/starfox.jpg" alt="Product Img">
-        </div>
-
-        <div class="col-4 col-md-3 col-lg-2">
-            <img class="img-fluid" src="images/carousel/theWitcher.jpg" alt="Product Img">
-        </div>
-
-        <div class="col-4 col-md-3 col-lg-2">
-            <img class="img-fluid" src="images/carousel/starwars-battlefront2.jpg" alt="Product Img">
-        </div>
-
-    </div>
-
-                            <!-- Descripcion Del Juego -->
-
-    <div class="row">
-        <div class="col">
-            <h3>TITULO DE JUEGO</h3>
-            <p>Descripcion Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates consequatur vitae ad distinctio assumenda odit odio doloremque repellendus impedit tenetur.</p>
-        </div>
-    </div>
+    
+    <!-- Precio, plataforma y genero -->
 </div>
 
 

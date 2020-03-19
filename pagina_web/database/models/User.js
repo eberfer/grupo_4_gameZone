@@ -20,13 +20,13 @@ module.exports = (sequelize, dataTypes) => {
 
     const User = sequelize.define(alias, cols, config);
 
-    User.associate = (models) => {
-        User.belongsToMany(models.Games, {
-            as: "Game",
-            through: "UserGame",
-            foreignKey: "user_id",
-            otherKey: "game_id"
-        })
-    }
+     User.associate = (models) => {
+         User.belongsToMany(models.Games, {
+             as: "Game",
+             through: "usergame",
+             foreignKey: "user_id",
+             otherKey: "game_id"
+         })
+     }
     return User;
 }
