@@ -1,36 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head')%>
-<%- include('partials/header')%>
+<%- include('partials/header2')%>
 
 <!-- Imagen principal de Product Detail -->
 
 <div class="container ">
     <!-- imagen del detalle -->
     <div class="row detailBackground">
-        <div class="col-10 col-lg-8 pl-0">
-            <img class="img-fluid" src="/images/carousel/starwars-battlefront2.jpg" alt="Game img">
+        <div class="col-12 col-lg-7 pl-md-0">
+            <img class="img-fluid" src="/images/productImg/<%= game.gameImg %>" alt="Game img">
         </div>
         <!-- Titulo y descripcion del juego -->
-        <div class="col-4">
+        <div class="col-12 col-lg-5">
             <div class="col mt-1">
-                <h5><strong> <%= game.name  %>  </strong></h5>
+                <h5><strong> <%= game.name  %>  </strong> - <%= game.expansion %> </h5>
                 <p class="gameDescription"> <%= game.detail %>  </p>
             </div>
-            <div class="col">
-                <p>Genre: <%=  game.genre_id.name %>   <br>
-                Platform:  <i class="fab fa-windows"></i>
-                </p>
-                <button type="submit" class="btn btnColor">Buy Now - $ <%= game.price %>  </button>            
+            <div class="col-12">
+                <p>Genre: <%=  game.genre.name %> </p>
+                <a href="/"><button class="btn btnColor mr-2">Buy Now - $ <%= game.price %>  </button></a>
             </div>
             
         </div>
-        <div class="col-10 col-lg-8 pl-0">
-            box of images
-        </div>
     </div>
     
-    <!-- Precio, plataforma y genero -->
 </div>
 
 

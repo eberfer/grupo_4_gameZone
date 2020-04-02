@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head')%>
+<%- include('partials/header2')%>
+
+<div class="container">
+    <div class="row mt-3">
+        
+        <form action= "/userEdit/<%= user.id %>" method="POST" enctype="multipart/form-data" id="userRegForm">
+            <!-- Seccion Nombre de Usuario -->
+            <div class="col-10">
+                <div class="form-group">
+                    <label for="userName">Username</label>
+                    <input value="<%= user.userName %>" type="text" name="userName" data-name="nombre de usuario" class="form-control" id="userName" aria-describedby="emailHelp">
+                    <p class="feedback">Aqui va el error</p>
+                </div>
+            </div>
+            
+            <!-- Seccion de Email -->
+            <div class="col-10">
+                <div class="form-group">
+                    <label for="emailAddres">Email address</label>
+                    <input value="<%= user.email %>" type="text" name="email" data-name="email" class="form-control" id="emailAddres" aria-describedby="email">
+                    <p class="feedback">Aqui va el error</p>
+                </div>
+            </div>
+            
+            
+            <!-- Seccion Password -->
+            <div class="col-10">
+                <div class="form-group">
+                    <label for="Password">Password</label>
+                    <input type="password" name="password" data-name="contraseña" class="form-control" id="Password">
+                    <p class="feedback">Aqui va el error</p>
+                </div> 
+            </div>
+            
+            
+            <!-- confirmacion de Password -->
+            <div class="col-10">
+                <div class="form-group">
+                    <label for="rePassword">Confirm Password</label>
+                    <input type="password" name="rePassword" data-name="repetir contraseña" class="form-control" id="rePassword">
+                    <p class="feedback">Aqui va el error</p>
+                </div>
+            </div>
+
+            <!-- Seleccion de Avatar -->
+            <div class="col-10">
+                <div class="form-group">
+                    <label>Avata:</label>
+                    <input type="file" name="avatar" data-name="avatar" value="<%= user.avatar %> ">
+                    <p class="feedback">Aqui va el error</p>
+                </div>
+			</div>
+            
+            
+            <!-- Seleccion de pais -->
+            <div class="col-10">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="seleccionDePais">Pais</label>
+                    </div>
+                    <select class="custom-select" name="country" data-name="país" id="seleccionDePais">
+                        <option value="<%= user.country %>" selected><%= user.country %> </option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Venezuela">Venezuela</option>
+                        <option value="Uruguay">Uruguay</option>
+                    </select><br>
+                </div> 
+                <p class="feedback">Aqui va el error</p>
+            </div>
+            
+            <!-- Boton de confirmacion y Registro -->
+            <div class="col">
+                <button type="submit" class="btn btnColor">Save</button>
+                
+                
+            </div>
+        </form>
+        
+    </div>
+</div>
+
+
+
+<%- include('partials/footer')%>

@@ -1,0 +1,21 @@
+.profileText {
+
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.admin {
+   color:rgb(253, 198, 16);
+   text-decoration: underline;
+}
+
+.fondo {
+    background-color: rgba( 0, 0, 0, .50);
+}
+
+@media(max-width: 500px) {
+    .profileImg {
+        border-radius: 50%;
+    }
+
+}

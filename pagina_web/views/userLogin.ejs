@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head')%>
-<%- include('partials/header')%>
+<%- include('partials/header2')%>
 
 <div class="container">
     <div class="row justify-content-center">
@@ -20,6 +20,14 @@
                     <label for="inputPassword">Password</label>
                     <input type="password" name="password" class="form-control" id="inputPassword" placeholder="*******">
                 </div>
+
+                <!-- Recordar Usuario -->
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="remember_user" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Recordar usuario
+                    </label>
+                  </div>
                 
                 <!-- Boton de envio -->
                 <button type="submit" class="btn btnColor">Login</button>

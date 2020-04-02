@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head')%>
+<%- include('partials/header2')%>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <!-- Cabecera de Tabla -->
+        <thead class="navbarCol toprowCol">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Game</th>
+            <th scope="col">Exp./Ver.</th>
+            <th scope="col">Price</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Action</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <!-- Filas  -->
+        <tbody>
+          <% games.forEach(oneGame => { %>
+            <tr>
+              <th scope="row"><%= oneGame.id %> </th>
+              <td><a href="/products/detail/<%= oneGame.id %>"><%= oneGame.name %></a></td>
+              <td><%= oneGame.expansion %> </td>
+              <td>$<%= oneGame.price %> </td>
+              <td><%= oneGame.genre.name %> </td>
+              <td>
+                <a href="/products/edit/<%= oneGame.id %> "><button class="btnColor">Edit</button></a>
+              </td>
+              <td>                        
+                <form action="/products/delete/<%= oneGame.id %>" enctype="multipart/form-data" method="POST">
+                  <button type="submit" class="btnColor">Delete</button>
+                </form>
+              </td>                                              
+            </tr>
+            <% }) %> 
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <%- include('partials/footer')%>

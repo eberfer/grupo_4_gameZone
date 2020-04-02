@@ -1,24 +1,32 @@
 
 
 .detailBackground {
-    background-color: rgba(7, 9, 31, 0.719);
+    background-color: rgb(12, 12, 12);
     border-radius: 5px;
     padding-left: 0px;
 }
 
 .btnColor {
-    
+    border-radius: 10px;
     transition: 0.2s;    
-    color: rgb(15, 24, 85);
+    color: rgb(12, 12, 12));
     border: solid 1px lightgray;
     background-color: lightgray;
 }
 
+.btnColor2 {
+    
+    transition: 0.2s;    
+    color: lightgray;
+    border: solid 1px rgb(12, 12, 12);
+    background-color: rgb(12, 12, 12);
+}
+
 .btnColor:hover {
     border-radius: 3px;
-    color: rgb(253, 158, 16);
-    border: solid 1px rgb(253, 158, 16);
-    background-color: rgba(7, 9, 31, 0.719);
+    color: rgb(253, 198, 16);
+    border: solid 1px rgb(253, 198, 16);
+    background-color: rgb(12, 12, 12);
 }
 
 .gameDescription{

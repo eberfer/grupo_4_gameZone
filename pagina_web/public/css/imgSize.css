@@ -1,10 +1,17 @@
 
+.miniImg {
+  
+}
+
 .smImg{
-    width: 100%; height: 118px ;
+    width: 431px; height: 242px ;
   }
 .mdImg{
     height: 118px;
   }
 .lgImg{
-    width: 400px; height: 400px;
+    height: 500px;
+    width: 300px;
+    object-fit: cover ;
   }
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head')%>
+<%- include('partials/header2')%>
+
+<div class="container">
+	<div class="row justify-content-center mt-3">
+		<div class="col-10 col-md-8 col-lg-6">
+
+			<div class="col">				
+				<h3 class="textAlign">Edit game</h3>
+			</div>
+			
+			<form action="/products/edit/<%= game.id %> " enctype="multipart/form-data" method="POST">
+				<!-- Nombre de juego -->
+				<div class="form-group">
+					<label for="Nombre">Nombre</label>
+					<input type="text" class="form-control" value="<%= game.name %> " name="name" id="Nombre">
+				</div>
+
+				<!-- Nombre de version/expansion -->
+
+				<div class="form-group">
+					<label for="Version/Expansion">Version/Expansion</label>
+					<input type="text" class="form-control" value="<%= game.expansion %> " name="expansion" id="Version/Expansion">
+				</div>
+				
+				<!-- Descripcion del juego -->
+
+				<div class="form-group">
+					<label for="Detail">Detail</label>
+					<textarea class="form-control" id="Detail" name="detail" rows="3"><%= game.detail %></textarea>
+				  </div>
+				
+				<!-- Price -->
+				<div class="form-group">
+					<label for="Precio">Precio</label>
+					<input type="number" class="form-control" value="<%= game.price %> " name="price" id="Precio">	
+				</div>				
+				
+				<!-- Game image -->
+				<div class="form-group">
+					<label for="gameImg">Game Image</label>
+					<input type="file" id="gameImg" name="gameImg" value="<%= game.gameImg %> ">
+				</div>
+			
+				
+				<!-- Game Category -->
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<label class="input-group-text" for="gameCategory">Category</label>
+					</div>
+					<select class="custom-select" id="gameCategory" name="genre_id">
+						<option value="<%= game.genre.name %> " selected> . . . </option>
+						<% genres.forEach(oneGenre => { %>
+							<option value="<%= oneGenre.id %>">
+								<%= oneGenre.name %>
+							</option>
+						<% }) %>
+					</select>
+				</div>
+				
+				<button type="submit" class="btn btnColor">Actualizar</button>
+			</form>
+			
+		</div>
+	</div>
+</div>
+
+<%- include('partials/footer')%>

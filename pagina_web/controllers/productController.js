@@ -2,79 +2,93 @@
 const db = require("../database/models")
 const sequelize = db.sequelize;
 const Op = db.Sequelize.Op;
-// const ubicacionProductosJSON = path.join(__dirname, '../data/products.json');
-// let contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8');
 
 
 // ************ Controller to read EJS file ************
-
 const controller = {  
   // Listado de productos
   list: (req, res) => {
      db.Games
-       .findAll({
-         include: ["genre", "user", "platform"]
-       })
-       .then(games => {
-         console.log(games);
-         
-         return res.render("products", {games})
-       })
+       .findAll({ include: ["genre", "user"]})
+       .then(games => { return res.render("products", {games}) })
        .catch(error => console.log(error)) 
   },
-
   // Creacion de producto
   create: (req, res) => {
      db.Genres
      .findAll()
-     .then(genres => {
-       db.Platforms
-         .findAll()
-         .then(platforms => {           
-           return res.render("newProduct", {platforms, genres});
-          })
-          .catch(error => {console.log(error)})
-      })      
-      .catch(error => {console.log(error)});
+     .then(genres => {return res.render("newProduct", {genres})} )
+     .catch(error => {console.log(error)})
   },
-  
-  store: (req, res) => {
+  //Guardar producto en DB
+  store: (req, res, next) => {    
+    // Se almacena toda la informacion que viene del formulario
     let gameInfo = {
       name: req.body.name,
       expansion: req.body.expansion,
       detail: req.body.detail,
       price: req.body.price,
-      platform: req.body.platform,
-      img: req.body.gameImg,
-      genre: req.body.genre
+      gameImg: req.file.filename,
+      genre_id: req.body.genre_id
     };
-
-    db.Games.create(gameInfo
-    );
-    console.log(gameInfo);
-        
-    res.redirect('/products');
+    // Se envia a la base de datos la informacion capturada
+    db.Games
+    .create(gameInfo)
+    .then(savedGame => {res.redirect('/products')})
+    .catch(error => console.log(error));              
   },
 
+  // Mostramos el Formulario de edicion con los datos originales del producto
   edit: (req, res) => {
-    
+    db.Games
+      .findByPk(req.params.id, {include: ["genre"] })
+      .then(game => {
+        db.Genres.findAll()
+          .then(genres => {
+            console.log(game)
+             return res.render("edit", {game: game, genres: genres});                    
+           })
+          .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));      
   },
-  
-  delete: (req, res) => {
-
+  // Actualizamos informacion en la base de datos
+  update: (req, res) => {
+    db.Games
+      .update({
+          name: req.body.name,
+          expansion: req.body.expansion,
+          detail: req.body.detail,
+          price: req.body.price,
+          gameImg: req.file.filename,
+          genre_id: req.body.genre_id
+        },
+        { where: { id: req.params.id } }
+      )
+      res.redirect("/adminProducts");
   },
   // Detalle de productos
   detail: (req, res) => {
      db.Games
        .findByPk(req.params.id, {
-         include: ["platform", "genre"]
+         include: ["genre"]
        })
-       .then(game => {
-         console.log(game.genre_id.name);
-         
+       .then(game => {                          
          return res.render("detail", {game})
        })
        .catch(error => console.log(error));
+  },
+  //Tabla de administracion de productos
+  adminBoard: (req, res) => {
+		db.Games
+       .findAll({include: ["genre"] })
+       .then(games => {return res.render("adminProducts", {games}) })
+       .catch(error => console.log(error));
+	},
+  //Borrar producto de DB
+  delete: (req, res) => {
+    db.Games.destroy({where: {id: req.params.id} })
+    res.redirect("/adminProducts")
   },
   // Carrito de productos
   productCart: (req, res) => {

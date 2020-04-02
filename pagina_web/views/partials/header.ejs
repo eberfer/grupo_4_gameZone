@@ -20,7 +20,7 @@
 						<a class="list-menu" href="/">Home</a><hr>
 						<a class="list-menu" href="/products">Games</a><hr>
 						<% if (isLogged) { %>
-						<a class="list-menu" href="/userProfile">Profile</a><hr>
+						<a class="list-menu" href="/userProfile/:id">Profile</a><hr>
 						<a class="list-menu" href="/logout">Logout</a><hr>
 						<% } else { %>
 						<a class="list-menu" href="/userRegister">Register</a><hr>
@@ -45,12 +45,19 @@
 					<a href="/products" class="nav-link">Games</a>
 				</li>
 				<% if (isLogged) { %>
-				<li class="nav-item">
-					<a href="/userProfile" class="nav-link">Profile</a>
-				</li>
-				<li class="nav-item">
-					<a href="/logout" class="nav-link">Logout</a>
-				</li>
+				
+					<div class="dropdown">
+						<button class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  Account
+						</button>
+						<div class="dropdown-menu">
+						  <a href="/userProfile/:id" class="dropdown-item" href="#">Profile</a>
+						  <a href="/administration" class="dropdown-item" href="#">Administration</a>
+						  <div class="dropdown-divider"></div>
+						  <a href="/logout" class="dropdown-item" href="#">Logout</a>
+						</div>
+					  </div>
+
 				<% } else { %>
 				<li class="nav-item">
 					<a href="/userRegister" class="nav-link">Register</a>

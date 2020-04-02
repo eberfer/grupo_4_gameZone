@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head')%>
+<%- include('partials/header2')%>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead class="navbarCol toprowCol">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Admin</th>
+            <th scope="col">Action</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% users.forEach(oneUser => { %>
+            <tr>
+              <th scope="row"><%= oneUser.id %> </th>
+              <td><%= oneUser.userName %> </td>
+              <td><%= oneUser.email %> </td>
+              <td><%= oneUser.admin %> </td>
+              <td><a href="/userEdit/<%= oneUser.id %>"><button class="btnColor">Edit</button></a></td>
+              <td>
+                <form action="/userDelete/<%= oneUser.id %>" enctype="multipart/form-data" method="POST">
+                  <button type="submit" class="btnColor">Delete</button>
+                </form>
+              </td> 
+          </tr>
+          <% }) %> 
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer')%>

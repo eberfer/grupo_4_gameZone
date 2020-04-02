@@ -1,60 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head')%>
-<%- include('partials/header')%>
+<%- include('partials/header2')%>
 
-<div class="container-fluid">
-    <div class="row">
-        <!-- Seccion de filtros -->
-        <div class="col-3">
-            <h3>Seccion de filtros</h3>
-            <div class="row filters">
-                <div class="col">
-                    <h4>Genero</h4>
-                    <ul>
-                        <li>Strategy</li>
-                        <li>Action</li>
-                        <li>Moba</li>
-                        <li>RPG</li>
-                    </ul>
+<div class="container-fluid">    
+    <h3 class="textAlign">Listado de juegos</h3>
+    <!-- Listado de juegos -->
+    <div class="row justify-content-center">                
+        <!-- Tarjeta individual de juego -->
+        <% games.forEach(oneGame => { %>
+            
+            <div class="col-10 col-sm-8 col-md-4 col-lg-3 col-xl-2 cubes hvr-underline-from-center">
+                <div class="row">
+                    <div class="col">
+                        <img class="img-fluid" src="/images/productImg/<%= oneGame.gameImg %>" alt="Game Img">
+                    </div>    
+                    <hr>                            
+                    <div class="col-12 cubeText">
+                        <a href="/products/detail/<%= oneGame.id %> "> <p> <%= oneGame.name %>
+                            <span> <%= oneGame.expansion %> </span>
+                        </p> </a>
+                        
+                        <p><strong>$ <%= oneGame.price %> </strong></p>
+                        <a href="/"><button class="btnColor">Add to Cart</button></a>
+                    </div>                        
                 </div>
             </div>
-
-
-        </div>
-        <!-- Listado de juegos -->
-        <div class="col-9">
-            <h3>Listado de juegos</h3>
-            <div class="row offset-1">
-                <!-- Tarjeta individual de juego -->
-
-
-                <% games.forEach(oneGame => { %>
-
-                    <div class="col-3 cubes hvr-underline-from-center">
-                        <div class="row">
-                            <div class="col-12">
-                                <img class="img-fluid" src="/images/productImg/Battlefield.jpg" alt="Game Img">
-                            </div>    
-                            <hr>                            
-                            <div class="col-12 cubeText">
-                                <a href="/products/detail/<%= oneGame.id %> "> <p> <%= oneGame.name %>
-                                    <span> <%= oneGame.expansion %> </span>
-                                 </p> </a>
-                                
-                                <p>$ <%= oneGame.price %> </p>
-                                <button type="submit" class="btnColor">Add to Cart</button>
-                                <button type="submit" class="btnColor">Delete</button>
-                            </div>                        
-                        </div>
-                    </div>
-
-                <% }) %>
-                    
-            </div>
-        </div>
-    </div>
-</div>  
-
-
-<%- include('partials/footer')%>
+            
+            <% }) %>
+            
+        </div>        
+    </div>  
+    
+    
+    <%- include('partials/footer')%>

@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head')%>
-<%- include('partials/header')%>
+<%- include('partials/header2')%>
 
 <div class="container">
-    <div class="row">
-        <div class="col-3">
-                 <img src="../public/images/avatars/<%=user.avatar%>" class="img-fluid" alt="Profile-IMG">
-            <h2>Welcome: <%=`${user.userName}`%> </h2>
+    <!-- cubiculo de perfil -->            
+    <div class="row p-2 fondo">        
+        <!-- Imagen -->
+        <div class="col-12 col-md-6">                    
+            <img src="/images/avatars/<%=user.avatar%>" class="img-fluid profileImg" alt="Profile-IMG">
         </div>
+        <!-- Informacion personal -->
+        <div class="col-12 col-md-6">
+            <div class="row">
+                <div class="col-6 col-md-12">
+                    <h3 class="profileText">User: <%=`${user.userName}`%> </h3 class="profileText">
+                        <% if (user.admin == 1) { %>
+                            <small class="admin">Administrator</small>
+                        <% } %>     
+                    <p>Email: <%= user.email %> </p>
+                </div>
+                <div class="col-6 col-md-12 align-self-center">
+                    <a href="/userEdit/<%= user.id %> "><button class="btnColor mb-2">Edit Profile</button></a>
+                </div>
+                <% if (user.admin == 1) { %>
+                    <div class="col">
+                        <a href="/products/newProduct"><button class="btnColor mb-2">Add New Game</button></a><br>
+                        <a href="/adminUsers"><button class="btnColor mb-2">Users List</button></a><br>
+                        <a href="/adminProducts"><button class="btnColor">Games List</button></a>
+                    </div>
+                <% } %> 
+            </div>                    
+        </div>        
     </div>
 </div>
-
+    
 <%- include('partials/footer')%>

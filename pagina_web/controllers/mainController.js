@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-// const bcrypt = require('bcrypt');
+const db = require("../database/models")
+const sequelize = db.sequelize;
+const Op = db.Sequelize.Op;
 
 
 
@@ -9,8 +9,15 @@ const path = require('path');
 const controller = {
 	
 	home: (req, res) => {
-		res.render("home2");
-	},	
+		let usuarioLogueado = db.Users.findByPk(req.session.userId)
+		let juegos = 
+		db.Games
+       		.findAll({ include: ["genre"]})
+			.then(game => {
+				res.render("home2", {game})
+			})
+			.catch(error => console.log(error))
+		}		
 };
 
 module.exports = controller

@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head')%>
-<%- include('partials/header')%>
+<%- include('partials/header2')%>
 
 <div class="container">
 	<div class="row justify-content-center mt-3">
 		<div class="col-10 col-md-8 col-lg-6">
+
+			<div class="col">				
+				<h3 class="textAlign">New game</h3>
+			</div>
 			
-			<h3>New game</h3>
-			
-			<form action="/products/newProduct" method="POST">
+			<form action="/products/newProduct" enctype="multipart/form-data" method="POST">
 				<!-- Nombre de juego -->
 				<div class="form-group">
 					<label for="Nombre">Nombre</label>
@@ -24,10 +26,11 @@
 				</div>
 				
 				<!-- Descripcion del juego -->
+
 				<div class="form-group">
 					<label for="Detail">Detail</label>
-					<input type="text" class="form-control" placeholder="..." name="detail" id="Detail">
-				</div>
+					<textarea class="form-control" id="Detail" name="detail" rows="3"></textarea>
+				  </div>
 				
 				<!-- Price -->
 				<div class="form-group">
@@ -35,35 +38,12 @@
 					<input type="number" class="form-control" placeholder="..." name="price" id="Precio">	
 				</div>				
 				
-				<!-- Platform -->
-				<div class="input-group mb-3">
-					<div class="input-group-prepend">
-						<label class="input-group-text" for="platform">Platform</label>
-					</div>
-					<select class="custom-select" id="platform" name="platform_id">
-						<option selected>...</option>
-
-						<% platforms.forEach(onePlatform => { %>
-							<option value="<%= onePlatform.id %>">
-								<%= onePlatform.name %>
-							</option>
-						<% }) %>
-						
-					</select>
-				</div>
-				
-				
-				<!-- Image ADD -->
-				<!-- <div class="form-group">
-					<label for="gameImg">gameImg</label>
-					<input type="text" class="form-control" placeholder="..." name="gameImg" id="gameImg">	
-				</div> -->
-				
+				<!-- Game image -->
 				<div class="form-group">
 					<label for="gameImg">Game Image</label>
-					<input type="file" id="gameImg" name="gameImg">
+					<input class="form-control-file" type="file" id="gameImg" name="gameImg">
 				</div>
-				
+			
 				
 				<!-- Game Category -->
 				<div class="input-group mb-3">
@@ -80,7 +60,7 @@
 					</select>
 				</div>
 				
-				<button type="submit">Guardar</button>
+				<button type="submit" class="btn btnColor">Guardar</button>
 			</form>
 			
 		</div>

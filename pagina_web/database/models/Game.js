@@ -10,7 +10,6 @@ module.exports = (sequelize, dataTypes) => {
         expansion: dataTypes.STRING,
         price: dataTypes.INTEGER,
         genre_id: dataTypes.INTEGER,
-        platform_id: dataTypes.INTEGER,
         detail: dataTypes.STRING,
         gameImg: dataTypes.STRING
     }
@@ -21,10 +20,6 @@ module.exports = (sequelize, dataTypes) => {
     const Game = sequelize.define(alias, cols, config)
 
     Game.associate = (models) => {
-        Game.belongsTo(models.Platforms, {
-            as: "platform",
-            foreignKey: "platform_id"
-        });
         Game.belongsTo(models.Genres, {
             as: "genre",
             foreignKey: "genre_id"

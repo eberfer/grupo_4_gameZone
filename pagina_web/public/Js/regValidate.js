@@ -70,7 +70,7 @@ formInputs.forEach(oneInput => {
     if (oneInput.name === "avatar"){
         oneInput.addEventListener("change", function(){
             // Listado de extensiones permitidas
-            let validExtensions = ["jpg", " jpeg", " gif", " png"];
+            let validExtensions = ["jpg", "jpeg", "gif", "png"];
             // Rescatamos la extension del archivo a subir
             let fileExtension = this.value.split(".").pop();
             // chequeo que el archivo a subir este en nuestro array de extensiones
