@@ -5,33 +5,38 @@
 
 <div class="container">
     <!-- cubiculo de perfil -->            
-    <div class="row p-2 fondo">        
-        <!-- Imagen -->
-        <div class="col-12 col-md-6">                    
-            <img src="/images/avatars/<%=user.avatar%>" class="img-fluid profileImg" alt="Profile-IMG">
-        </div>
-        <!-- Informacion personal -->
-        <div class="col-12 col-md-6">
-            <div class="row">
-                <div class="col-6 col-md-12">
-                    <h3 class="profileText">User: <%=`${user.userName}`%> </h3 class="profileText">
+    <div class="row justify-content-center">  
+        <div class="col-12 col-lg-8">
+            <div class="row p-2 fondo justify-content-center">
+                <!-- Imagen -->
+                <div class="col col-md-6">                    
+                    <img src="/images/avatars/<%=user.avatar%>" class="img-fluid profileImg " alt="Profile-IMG">
+                </div>
+                <!-- Informacion personal -->
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <div class="col-6 col-md-12">
+                            <h3 class="profileText">User: <%=`${user.userName}`%> </h3 class="profileText">
+                                <% if (user.admin == 1) { %>
+                                    <small class="admin">Administrator</small>
+                                <% } %>     
+                            <p>Email: <%= user.email %> </p>
+                        </div>
+                        <div class="col-6 col-md-12 align-self-center">
+                            <a href="/userEdit/<%= user.id %> "><button class="btnColor mb-2">Edit Profile</button></a>
+                        </div>
                         <% if (user.admin == 1) { %>
-                            <small class="admin">Administrator</small>
-                        <% } %>     
-                    <p>Email: <%= user.email %> </p>
-                </div>
-                <div class="col-6 col-md-12 align-self-center">
-                    <a href="/userEdit/<%= user.id %> "><button class="btnColor mb-2">Edit Profile</button></a>
-                </div>
-                <% if (user.admin == 1) { %>
-                    <div class="col">
-                        <a href="/products/newProduct"><button class="btnColor mb-2">Add New Game</button></a><br>
-                        <a href="/adminUsers"><button class="btnColor mb-2">Users List</button></a><br>
-                        <a href="/adminProducts"><button class="btnColor">Games List</button></a>
-                    </div>
-                <% } %> 
-            </div>                    
-        </div>        
+                            <div class="col">
+                                <a href="/products/newProduct"><button class="btnColor mb-2">Add New Game</button></a><br>
+                                <a href="/adminUsers"><button class="btnColor mb-2">Users List</button></a><br>
+                                <a href="/adminProducts"><button class="btnColor">Games List</button></a>
+                            </div>
+                        <% } %> 
+                    </div>                    
+                </div>        
+
+            </div>
+        </div>      
     </div>
 </div>
     

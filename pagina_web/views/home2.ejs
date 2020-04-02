@@ -7,7 +7,7 @@
 
 <!-- Top Section -->
 <div class="container p-1">
-    <div class="row pt-2 navbarCol">
+    <div class="row pt-2 fondo mb-2">
         <!-- carrousel Section -->
         <div class="col-12 col-lg-9  mb-2">
             <h3 class="text-align-center">Novedades</h3>
@@ -24,20 +24,20 @@
                         <div class="carousel-inner">
                             <!-- Carousel Items -->
                             <div class="carousel-item active">
-                                <img src="/images/carousel/cyberpunk2077.jpg" class="d-block w-100" alt="Image 1">
+                               <a href="/products/detail/34"><img src="/images/productImg/game_img_1585808471447.jpg" class="d-block w-100" alt="Image 1"></a>
                                 
                             </div>
                             
                             <div class="carousel-item">
-                                <img src="/images/carousel/LeagueOfLegends.jpg" class="d-block w-100" alt="image 2">
+                                <a href="/products/detail/33"><img src="/images/productImg/game_img_1585808360584.jpg" class="d-block w-100" alt="image 2"></a>
                                 
                             </div>
                             <div class="carousel-item">
-                                <img src="/images/carousel/fifa20.jpg" class="d-block w-100" alt="image 3">
+                                <a href="/products/detail/32"><img src="/images/productImg/game_img_1585808172698.jpg" class="d-block w-100" alt="image 3"></a>
                                 
                             </div>
                             <div class="carousel-item">
-                                <img src="/images/carousel/starwars-battlefront2.jpg" class="d-block w-100" alt="image 4">
+                                <a href="/products/detail/12"><img src="/images/productImg/game_img_1585784665725.jpg" class="d-block w-100" alt="image 4"></a>
                                 
                             </div>
                         </div>
@@ -62,24 +62,24 @@
         
         <!-- Lista lateral derecha -->
         <div class="col-12 col-lg-3 ">
-            <h3 class="text-align-center">Free To Play</h3>
+            <h3 class="genreText">Free To Play</h3>
             <div class="row ">
                 <div class="col-12">
                     <div class="row justify-content-center">
                         <!-- caja individual -->
                         <div class="col-10 col-sm-5 col-md-3 col-lg-10 news-section hvr-underline-from-center ">
-                            <img class="img-fluid" src="/../../images/productImg/madden.jpg" alt="Game IMG">
-                            <a href="/"> <h6>Juego 1</h6> </a>
+                            <a href="/products/detail/27"><img class="img-fluid" src="/../../images/productImg/game_img_1585807728875.jpg" alt="Game IMG">
+                             <h6>DOTA 2</h6> </a>
                         </div><br>
                         
                         <div class="col-10 col-sm-5 col-md-3 col-lg-10 news-section hvr-underline-from-center">
-                            <img class="img-fluid" src="../images/productImg/madden.jpg" alt="Game IMG">
-                            <a href="/"> <h6>Juego 2</h6> </a>
+                            <a href="/products/detail/16"><img class="img-fluid" src="../images/productImg/game_img_1585785302767.jpg" alt="Game IMG">
+                             <h6>Ori & the Blind Forest</h6> </a>
                         </div><br>
                         
                         <div class="col-10 col-sm-5 col-md-3 col-lg-10 news-section hvr-underline-from-center">
-                            <img class="img-fluid" src="../images/productImg/madden.jpg" alt="Game IMG">
-                            <a href="/"> <h6>Juego 3</h6> </a>
+                            <a href="/products/detail/35"><img class="img-fluid" src="../images/productImg/game_img_1585808531138.jpg" alt="Game IMG">
+                             <h6>NFS Underground 2</h6> </a>
                         </div><br>
                     </div>
                 </div>
@@ -87,6 +87,18 @@
         </div>
         
     </div>
+
+    <!-- Seccion de genero -->
+    
+    <div class="row justify-content-center ddBtn genreText mt-2 p-2">
+        <div class="col-12"><h3>Busca por Genero</h3></div>
+        <!-- cubos individuales -->
+        <% genres.forEach(oneGenre => { %>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-2 mb-2 hvr-underline-from-center genreText "><a href="/products/genre/<%= oneGenre.id %> "><%= oneGenre.name %> </a></div>
+        <% }) %> 
+        
+    </div>
+
 </div>
 
 <br>

@@ -6,18 +6,15 @@ const Op = db.Sequelize.Op;
 
 // ************ Controller to read EJS file ************
 
-const controller = {
-	
+const controller = {	
 	home: (req, res) => {
-		let usuarioLogueado = db.Users.findByPk(req.session.userId)
-		let juegos = 
-		db.Games
-       		.findAll({ include: ["genre"]})
-			.then(game => {
-				res.render("home2", {game})
-			})
-			.catch(error => console.log(error))
-		}		
+		let traerJuegos = db.Games.findAll();
+		let traerGeneros = db.Genres.findAll();
+		Promise.all([traerJuegos, traerGeneros])
+		.then(([games, genres]) => {
+			res.render("home2",{games: games, genres: genres})
+		})
+		.catch(error => console.log(error));
+	}
 };
-
 module.exports = controller

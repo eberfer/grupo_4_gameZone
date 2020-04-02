@@ -13,6 +13,12 @@ const controller = {
        .then(games => { return res.render("products", {games}) })
        .catch(error => console.log(error)) 
   },
+  listByGenre: (req, res) => {
+    db.Games
+       .findAll({ where: { genre_id: req.params.id}, include: ["genre", "user"]})
+       .then(games => { return res.render("genre", {games}) })
+       .catch(error => console.log(error)) 
+  },
   // Creacion de producto
   create: (req, res) => {
      db.Genres
