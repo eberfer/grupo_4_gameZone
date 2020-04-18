@@ -7,11 +7,11 @@
             <div class="col-4 d-md-none"><a href="/"><img src="/images/shortLogo.png" alt="Logo" class="img-fluid no-gutters"></a></div>
             <div class="col-4 col-lg-2 d-none d-md-block"><a href="/"><img src="/images/longLogo.png" alt="Logo" class="img-fluid "></a></div>
             <% if (isLogged) { %>
-                    <div class="col align-self-center"><a href="/userProfile/:id">Account</a></div>
+                    <div class="col align-self-center"><a href="/user/profile">Account</a></div>
                    <div class="col align-self-center"><a href="/logout">Logout</a></div>                    
             <% } else { %>
-                <div class="col align-self-center"><a href="/userLogin">Login</a></div>
-                <div class="col align-self-center"><a href="/userRegister">Register</a></div>
+                <div class="col align-self-center"><a href="/user/login">Login</a></div>
+                <div class="col align-self-center"><a href="/user/register">Register</a></div>
             <% } %> 
         </div>
     </div>        

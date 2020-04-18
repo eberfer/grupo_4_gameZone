@@ -12,7 +12,7 @@ const controller = {
 		let traerGeneros = db.Genres.findAll();
 		Promise.all([traerJuegos, traerGeneros])
 		.then(([games, genres]) => {
-			res.render("home2",{games: games, genres: genres})
+			res.render("home", {games: games, genres: genres})
 		})
 		.catch(error => console.log(error));
 	}

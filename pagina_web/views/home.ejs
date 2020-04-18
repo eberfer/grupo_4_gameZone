@@ -6,10 +6,10 @@
 
 
 <!-- Top Section -->
-<div class="container p-1">
-    <div class="row pt-2 fondo mb-2">
+<div class="container-fluid p-1">
+    <div class="row pt-2 mb-2 justify-content-around">
         <!-- carrousel Section -->
-        <div class="col-12 col-lg-9  mb-2">
+        <div class="col-12 col-lg-8 fondo mb-2">
             <h3 class="text-align-center">Novedades</h3>
             <div class="row">
                 <!-- Carrousel IMG -->
@@ -61,7 +61,7 @@
         
         
         <!-- Lista lateral derecha -->
-        <div class="col-12 col-lg-3 ">
+        <div class="col-12 col-lg-3 fondo ">
             <h3 class="genreText">Free To Play</h3>
             <div class="row ">
                 <div class="col-12">
@@ -94,8 +94,8 @@
         <div class="col-12"><h3>Busca por Genero</h3></div>
         <!-- cubos individuales -->
         <% genres.forEach(oneGenre => { %>
-            <div class="col-10 col-sm-6 col-md-4 col-lg-2 mb-2 hvr-underline-from-center genreText "><a href="/products/genre/<%= oneGenre.id %> "><%= oneGenre.name %> </a></div>
-        <% }) %> 
+            <div class="col-10 col-sm-6 col-md-4 col-lg-2 mb-2 hvr-underline-from-center genreText "><a href="/products/genre/<%= oneGenre.id %>"><%= oneGenre.name %> </a></div>
+        <%})%> 
         
     </div>
 

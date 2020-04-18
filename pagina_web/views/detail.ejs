@@ -15,11 +15,17 @@
         <div class="col-12 col-lg-5">
             <div class="col mt-1">
                 <h5><strong> <%= game.name  %>  </strong> - <%= game.expansion %> </h5>
-                <p class="gameDescription"> <%= game.detail %>  </p>
+                <p class="gameDescription text-justify"> <%= game.detail %>  </p>
             </div>
             <div class="col-12">
                 <p>Genre: <%=  game.genre.name %> </p>
-                <a href="/"><button class="btn btnColor mr-2">Buy Now - $ <%= game.price %>  </button></a>
+                <a href="/"><button class="btn btnColor mr-2">
+                    <% if (game.price == 0) { %>
+                        Download
+                    <% } else { %>
+                        Buy Now - $ <%= game.price %> 
+                    <% } %> 
+                 </button></a>
             </div>
             
         </div>

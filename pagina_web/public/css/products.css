@@ -4,6 +4,7 @@
     background-color: rgb(12, 12, 12); 
     padding: 0px;
     margin: 15px;
+    imgsi
     
 }
 
@@ -19,4 +20,8 @@ a h5 {
 
 .cubeText span {
     font-size: 15px;
+}
+
+ul {
+    list-style: none;
 }

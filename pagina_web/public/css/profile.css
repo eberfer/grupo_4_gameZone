@@ -13,7 +13,7 @@
     background-color: rgba( 0, 0, 0, .50);
 }
 
-@media(max-width: 500px) {
+@media(max-width: 767px) {
     .profileImg {
         border-radius: 50%;
     }

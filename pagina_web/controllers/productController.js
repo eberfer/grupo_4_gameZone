@@ -8,9 +8,11 @@ const Op = db.Sequelize.Op;
 const controller = {  
   // Listado de productos
   list: (req, res) => {
-     db.Games
-       .findAll({ include: ["genre", "user"]})
-       .then(games => { return res.render("products", {games}) })
+    let gamesList = db.Games.findAll();
+    let genreList = db.Genres.findAll();
+    
+    Promise.all([gamesList, genreList])
+       .then(([games, genres]) => res.render("products", {games, genres}))
        .catch(error => console.log(error)) 
   },
   listByGenre: (req, res) => {
@@ -79,8 +81,10 @@ const controller = {
        .findByPk(req.params.id, {
          include: ["genre"]
        })
-       .then(game => {                          
-         return res.render("detail", {game})
+       .then(game => {  
+         if (req.params.id != null){
+           return res.render("detail", {game})
+         }                        
        })
        .catch(error => console.log(error));
   },

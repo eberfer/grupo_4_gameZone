@@ -6,14 +6,32 @@
 <div class="container-fluid">    
     <h3 class="textAlign">Listado de juegos</h3>
     <!-- Listado de juegos -->
-    <div class="row justify-content-center">                
+    <div class="row justify-content-center">
+        <!-- seccion de filtrado -->
+        <div class="col-10 col-sm-8 col-md-4 col-lg-3 col-xl-2 cubes p-2">
+            <h3>Generos</h3>
+            <hr>
+            <ul>
+                <% genres.forEach(oneGenre => { %>
+                    <li>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              <%= oneGenre.name %> 
+                            </label>
+                          </div>
+                    </li>
+                <% }) %> 
+            </ul>
+        </div>
+        
         <!-- Tarjeta individual de juego -->
         <% games.forEach(oneGame => { %>
             
             <div class="col-10 col-sm-8 col-md-4 col-lg-3 col-xl-2 cubes hvr-underline-from-center">
                 <div class="row">
                     <div class="col">
-                        <img class="img-fluid" src="/images/productImg/<%= oneGame.gameImg %>" alt="Game Img">
+                        <img class="img-fluid" src="/images/productImg/<%= oneGame.gameImg %>" alt="Game Img" >
                     </div>    
                     <hr>                            
                     <div class="col-12 cubeText">
