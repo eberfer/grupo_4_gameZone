@@ -36,16 +36,16 @@ app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la 
 const mainRouter = require('./routes/main');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
-const apiGames = require('./routes/api/products')
-const apiUsers = require('./routes/api/users')
+const api = require('./routes/api')
+
 
 
 
 app.use('/', mainRouter);
 app.use('/', usersRouter);
 app.use('/', productsRouter);
-app.use('/api/products', apiGames);
-app.use('/api/users', apiUsers);
+app.use('/api', api);
+
 
 
 
