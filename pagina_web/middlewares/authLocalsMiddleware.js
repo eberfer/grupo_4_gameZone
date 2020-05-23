@@ -3,8 +3,8 @@ const locals = (req, res, next) => {
     // asi que seteamos la autenticacion en "false" y los campos vacios.
     res.locals.isAuthenticated = false;
     res.locals.userId = "";
-    res.locals.avatar ="";
     res.locals.userName = "";
+    res.locals.avatar ="";
     res.locals.admin = "";
 
     console.log(req.session.user);
@@ -20,6 +20,9 @@ const locals = (req, res, next) => {
         res.locals.userName = req.session.user.userName
         res.locals.admin = req.session.user.admin
     }
+
+    console.log(res.locals);
+    
 
 
     next();

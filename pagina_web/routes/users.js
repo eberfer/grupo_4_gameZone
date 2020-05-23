@@ -28,11 +28,11 @@ router.post('/user/register', upload.single('avatar'), usersController.store);
 
 router.get('/user/login', guestMiddleware, usersController.login);
 router.post('/user/login', usersController.processUserLogin);
-router.get('/user/profile', authMiddleware, usersController.profile);
+router.get('/user/profile', usersController.profile);
 router.get("/user/:id/update", authMiddleware, usersController.edit);
 router.post("/user/:id/update", upload.single("avatar"), usersController.update);
 router.post("/user/:id/delete", adminMiddleware, usersController.delete)
 router.get('/logout', usersController.logout);
-router.get("/adminUsers",authMiddleware, adminMiddleware, usersController.adminBoard);
+router.get("/adminUsers", usersController.adminBoard);
 
 module.exports = router;

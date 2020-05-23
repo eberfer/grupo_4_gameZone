@@ -25,8 +25,8 @@ const adminMiddleware = require("../middlewares/adminMiddleware")
 
 router.get("/products", productController.list);
 router.get("/products/genre/:id", productController.listByGenre);
-router.get('/products/newProduct', adminMiddleware, productController.create);
-router.post('/products/newProduct', upload.single("gameImg"), productController.store);
+router.get('/products/add', adminMiddleware, productController.create);
+router.post('/products/add', upload.single("gameImg"), productController.store);
 router.get('/products/detail/:id', productController.detail);
 router.get('/products/edit/:id', adminMiddleware, productController.edit);
 router.post('/products/edit/:id', upload.single("gameImg"),productController.update);

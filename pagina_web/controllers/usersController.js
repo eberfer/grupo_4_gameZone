@@ -30,17 +30,13 @@ const controller = {
 		// Buscar usuario en base de datos
 		db.Users
 		.findAll({where: {email: req.body.email} })
-		.then(user => {
-			console.log(user);
-			 
+		.then(user => {					 
 			if (user[0] != undefined){			
 			//Si encontramos al usuario, comparamos contraseñas
 				if (bcrypt.compare(req.body.password, user[0].password)) {					
 					delete user[0].password;
 					// Setear en session el ID y AdminType del usuario
-					req.session.userId = user[0].id;
-					req.session.admin = user[0].admin;					
-								
+					req.session.user = user[0];								
 					// Setear la cookie
 					if (req.body.remember_user) {
 						res.cookie('userCookie', user[0].id, { maxAge: 60000 * 60 });
@@ -58,10 +54,8 @@ const controller = {
 	//vista de perfil
 	profile: (req, res) => {
 		db.Users
-		.findByPk(req.session.userId)
-		.then(user => {
-			console.log(user);
-			
+		.findByPk(res.locals.userId)
+		.then(user => {			
 				res.render(`profile`, {user: user})} )
 				.catch(error => {console.log(error);
 				})

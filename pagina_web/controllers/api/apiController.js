@@ -9,24 +9,22 @@ const controller = {
     //Listado de productos y Total de precios
     
     games: (req, res) => {
-        let genresList = db.Genres.findAll();
         let totalPrice = db.Games.sum("price");
         let gamesList = db.Games.findAll({
             order: [["id", "DESC"]],
             attributes: ['id', 'name', 'expansion', 'detail', 'gameImg']
         });
         
-        Promise.all([totalPrice, gamesList, genresList])
-        .then(([finalPrice, games, genres]) => {
+        Promise.all([totalPrice, gamesList])
+        .then(([finalPrice, games]) => {
             let respuesta = {
                 meta: {
                     status: 200,
                     totalAmount: finalPrice,
                     totalGames: games.length,
-                    totalGenres: genres.length,
                     url: '/api/products'
                 },
-                data: [genres, games]
+                data: [games]
             };
             return res.json(respuesta)
         })

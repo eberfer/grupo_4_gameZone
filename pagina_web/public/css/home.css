@@ -71,3 +71,13 @@ h4 {
     text-align: center;
 }
 
+.ddBackground {
+    background-color: rgba(0, 0, 0, .80);
+    color: lightgray
+}
+
+.ddBackground:hover {
+    background-color: rgba(0, 0, 0, .80);
+    color: rgb(253, 198, 16);  
+}
+

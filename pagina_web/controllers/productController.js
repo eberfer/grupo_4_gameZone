@@ -25,7 +25,7 @@ const controller = {
   create: (req, res) => {
      db.Genres
      .findAll()
-     .then(genres => {return res.render("newProduct", {genres})} )
+     .then(genres => {return res.render("add", {genres})} )
      .catch(error => {console.log(error)})
   },
   //Guardar producto en DB
@@ -53,7 +53,6 @@ const controller = {
       .then(game => {
         db.Genres.findAll()
           .then(genres => {
-            console.log(game)
              return res.render("edit", {game: game, genres: genres});                    
            })
           .catch(error => console.log(error));
