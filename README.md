@@ -1,4 +1,4 @@
-# grupo_4_ServiLink
+# grupo_4_gameZone
 Proyecto integrador para Digital House
 
 Game Zone
